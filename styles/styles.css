@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+.container {
+  margin-top: 50px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 50px auto;
+  width: 60%;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Crimson Text", serif;
+  margin-block-start: 0px;
+  margin-block-end: 5px;
+}
+
+a, a:visited {
+  color: #5FAEF5;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: italic;
+}
+a:hover, a:visited:hover {
+  color: #AAD3F7;
+  text-decoration: none;
+}
+a:clicked, a:visited:clicked {
+  color: #4C8BC2;
+}
+
+em {
+  font-weight: 600;
+}
+
+.inset {
+  width: 80%;
+  margin: auto 10%;
+}
+
+.pagenav-link {
+  color: black;
+  display: inline;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.pagenav-link:visited {
+  text-decoration: none;
+  color: black;
+}
+.pagenav-link:hover {
+  text-decoration: none;
+  color: black;
+}
+.pagenav-link:hover {
+  text-decoration: none;
+  color: #5FAEF5;
+}
+
+/*# sourceMappingURL=styles.css.map */
