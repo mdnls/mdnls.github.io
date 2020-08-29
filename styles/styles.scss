@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+// light light, light, medium, dark, dark dark blue
+$blue-ll: #AAD3F7;
+$blue-l: #5FAEF5;
+$blue-m: #4C8BC2;
+$blue-d: #2E5475;
+$blue-dd: #516475;
+
+.container {
+	margin-top: 50px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 50px auto;
+	width: 60%;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Crimson Text', serif;
+	margin-block-start: 0px;
+	margin-block-end: 5px;
+}
+
+a, a:visited {
+	color: $blue-l;
+	font-weight: 400;
+	text-decoration: none;
+	font-style: italic;
+
+	&:hover {
+		color: $blue-ll;
+		text-decoration: none;
+	}
+	&:clicked {
+		color: $blue-m;
+	}
+}
+
+em {
+	font-weight: 600;
+}
+
+.inset {
+	width: 80%;
+	margin: auto 10%;
+}
+
+.pagenav-link {
+	color: black;
+	display: inline;
+	text-decoration: none;
+	font-style: italic;
+	font-weight: 400;
+
+	&:visited {
+		text-decoration: none;
+		color: black;
+	}
+	&:hover {
+		text-decoration: none;
+		color: black;
+	}
+	&:hover {
+		text-decoration: none;
+		color: $blue-l;
+	}
+}
