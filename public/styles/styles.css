@@ -16,14 +16,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Crimson Text", serif;
   margin-block-start: 0px;
-  margin-block-end: 5px;
+  margin-block-end: 10px;
 }
 
 a, a:visited {
   color: #5FAEF5;
   font-weight: 400;
   text-decoration: none;
-  font-style: italic;
 }
 a:hover, a:visited:hover {
   color: #AAD3F7;
@@ -38,8 +37,8 @@ em {
 }
 
 .inset {
-  width: 80%;
-  margin: auto 10%;
+  width: 95%;
+  margin: auto 2.5%;
 }
 
 .pagenav-link {
