@@ -17,5 +17,5 @@ watch :
 
 .PHONY : deploy
 deploy : all
-	git commit public -m "Automated deploy commit"
+	git commit public --quiet -m "Automated deploy commit" || echo "Deploying with no changes."
 	git subtree push --prefix public github gh-pages
