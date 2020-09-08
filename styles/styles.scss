@@ -2,8 +2,8 @@
 
 // light light, light, medium, dark, dark dark blue
 $blue-ll: #AAD3F7;
-$blue-l: #5FAEF5;
-$blue-m: #4C8BC2;
+$blue-l: #76baf5;
+$blue-m: #68a1d3;
 $blue-d: #2E5475;
 $blue-dd: #516475;
 
@@ -28,16 +28,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:visited {
-	color: $blue-l;
+	color: $blue-m;
 	font-weight: 400;
 	text-decoration: none;
 
 	&:hover {
-		color: $blue-ll;
+		color: $blue-d;
 		text-decoration: none;
 	}
 	&:clicked {
-		color: $blue-m;
+		color: $blue-d;
 	}
 }
 
@@ -48,6 +48,11 @@ em {
 .inset {
 	width: 95%;
 	margin: auto 2.5%;
+	font-size: 16px;
+}
+
+.feat {
+	text-decoration: underline;
 }
 
 .pagenav-link {
@@ -67,6 +72,6 @@ em {
 	}
 	&:hover {
 		text-decoration: none;
-		color: $blue-l;
+		color: $blue-m;
 	}
 }
