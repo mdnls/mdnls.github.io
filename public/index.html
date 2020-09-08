@@ -15,12 +15,12 @@
         <div class="row">
             <div class="pagenav col">
                 <p>
-                    <a class="pagenav-link" href="#about">About</a> • <a class="pagenav-link" href="#publications">Publications</a> • <a class="pagenav-link" href="#awards">Awards</a> • <a class="pagenav-link" href="#service">Service</a>
+                    <a class="pagenav-link" href="#about">About</a> • <a class="pagenav-link" href="#work">Selected Work</a> • <a class="pagenav-link" href="#awards">Awards</a> • <a class="pagenav-link" href="#service">Service</a> • <a class="pagenav-link" href="#talks">Talks</a> • <a class="pagenav-link" href="assets/CV.pdf">CV</a>
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-7 col-xs-12 my-md-1 my-2">
+            <div class="col-md-7 col-xs-12 my-md-1 my-2" id="about">
                 I’m interested in the intrinsic structures hidden inside data and the conditions under which these structures can be recovered, compressed, or visualized. I am lucky to have been advised by <a href="https://khoury.northeastern.edu/home/hand/">Dr. Paul Hand</a> and <a href="https://mkilme01.pages.tufts.edu/">Dr. Misha Kilmer</a> on topics in imaging inverse problems, generative modeling with deep neural networks, and compression methods for multiway data.
             </div>
             <div class="offset-md-1 col-md-4 col-xs-12 my-md-1 my-2">
@@ -34,11 +34,8 @@
                 <p>Please reach out by email at <span style="font-family: Courier, sans-serif">[lastname].g@northeastern.edu</span> or on social media (<a href="https://twitter.com/m_dnls">Twitter</a>, <a href="https://www.linkedin.com/in/mdnls/">LinkedIn</a>, and <a href="https://github.com/mdnls">GitHub</a>).</p>
             </div>
         </div>
-        <h2 id="awards">Awards</h2>
-        <div class="row">
-            <p><em>Barry Goldwater Award</em>. Received the Barry Goldwater award as a Sophomore (one of 396 recipients).</p>
-        </div>
-        <h2 id="publications">Publications</h2>
+
+        <h2 id="work">Selected Work</h2>
         <div class="row">
             <div class="col-12">
                 <a href="https://proceedings.icml.cc/static/paper_files/icml/2020/2655-Paper.pdf">Invertible generative models for inverse problems: mitigating representation error and dataset bias.</a>
@@ -49,11 +46,68 @@
                
                 <a href="http://mdnls.cc/prob-vis">Statistical Distances and Their Implications to GAN Training.</a>
                 <div class="inset">
-                    <p><span class="feat">Max Daniels</span>. Accepted to VISxAI workshop at IEEE VIS 2019. <span class="feat">Honorable mention for best submission</span>.</p>
+                    <p><span class="feat">Max Daniels</span>. Presented at VISxAI workshop at IEEE VIS 2019. <span class="feat">Honorable mention for best submission</span>.</p>
                     <p>This is an interactive article about the role of statistical distances like Kullback Leibler Divergence and Earth Mover's Distance in training Generative Adversarial Networks (GANs).</p>
                 </div>
-            </div>
 
+
+                <a href="https://ghost-clusters.github.io/icerm-spectral-clustering/html/Graph%20Spectral%20Clustering.pdf">An Overview of Graph Spectral Clustering and Partial Differential Equations.</a>
+                <div class="inset">
+                    <p><span class="feat">Max Daniels</span>*, Catherine Huang*, Chloe Makdad*, Shubham Makharia*. Product of the ICERM 2020 summer undergraduate research program.</p>
+                    <p>Clustering is a useful tool in data analysis. We explain the connection between the graph spectral clustering algorithm and the physical process of heat diffusion.</p>
+                </div>
+            </div>
+        </div>
+        <h2 id="awards">Awards</h2>
+        <div class="row">
+            <div class="col-12">
+                <p><em>Barry Goldwater Award</em>. Recipient of a Barry Goldwater award for outstanding undergraduate research (national award, one of 22 recipients in computer science, received as a sophomore).</p>
+                <p><em>Summit Research Award</em>. Recipient of a Northeastern University internal research award of $3000.</p>
+                <p><em>University Honors Early Research Award</em>. Recipient of a Northeastern University Honors Program award for outstanding research by a freshman or sophomore student in the amount of $1000.</p>
+            </div>
+        </div>
+        
+        <h2 id="talks">Talks</h2>
+        <div class="row">
+            <div class="col-12">
+                <a href="https://prob-vis.danielsmax.com/SUMS.html">Semantic Manipulations through Learned Information Representations.</a> March 2020.
+                <div class="inset">
+                    <p>Invited talk given at Brown University's Symposium for Undergraduates in the Mathematical Sciences.</p>
+                    <p>The talk and slides begin with an overview of Noise Contrastive Estimation for generative modeling. They explain the Word2Vec algorithm as a simplification of NCE with interpretable parameters, then explain how Generative Adversarial training uses ideas from NCE to learn to efficiently approximately sample a data distribution.  </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="https://drive.google.com/drive/folders/1vj3D_xyLZgbav5Ph2C8kuJLbBdmgC5Ps?usp=sharing">ASME Machine Learning Workshop.</a> June 2019.
+                <div class="inset">
+                    <p>Co-organized three week workshop on machine learning for Northeastern's chapter of the American Society of Mechanical Engineers.</p>
+                    <p>Emphasis in the workshop was placed on regression, decision trees, and boosting models.</p>
+                </div>
+            </div>
+            <!-- Is this even worth listing? Not my original work...
+
+            <div class="col-12">
+                Expository Presentation of <i>Recovering low-rank matrices from few coefficients in any basis</i> by D. Gross. February 2020.
+                <div class="inset">
+                    <p>Class presentation given in CS 7180 Special Topics in AI to an audience of Professors and PhD students.</p>
+                    <p>While a general matrix has $O(n^2)$ parameters, a rank $r$ matrix has only $O(nr)$ degrees of freedom. The paper shows that $O(nr \log^2(n))$ <i>random linear measurements</i> of a rank $r$ matrix are sufficient to uniquely determine its parameters with high probability.</p>
+                </div>
+            </div>
+            -->
+        </div>
+
+        <h2 id="service">Service</h2>
+        <div class="row">
+            <div class="col-12">
+                <p>I care about educational outreach and activism. Here are some of the ways I'm involved:
+                    <ul>
+                        <li><a href="">Mathematics Engagement and Mentorship Association</a> - I am the chairperson and communications lead for the MathEMA, the NEU Math Department's student mentorship organization. Our goal is to create a more welcoming and diverse environment by connecting young mathematics undergraduates with more experienced mentors.</li>
+                        <li><a href="">Math Club</a> - I hold a position on the executive board of the NEU Math Club. I assist in coordinating weekly events like invited talks, problem solving workshops, and social events.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
         </div>
     </body>
     
