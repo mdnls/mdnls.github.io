@@ -8,6 +8,7 @@ page :
 
 .PHONY : all
 all : sty page
+	@cp -r tensorvis public/
 
 
 .PHONY : watch
