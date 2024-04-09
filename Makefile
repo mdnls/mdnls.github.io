@@ -8,15 +8,14 @@ page :
 
 .PHONY : all
 all : sty page
-	@cp -r tensorvis public/
+	@cp -r tensorvis docs/
 
 
 .PHONY : watch
 watch :
 	@echo "Watching..."
-	@fswatch . --exclude public | (while read; do make all; done)
+	@fswatch . --exclude docs | (while read; do make all; done)
 
 .PHONY : deploy
 deploy : all
 	@git commit public --quiet -m "Automated deploy commit" || echo "Deploying with no changes."
-	@git subtree push --prefix public github gh-pages

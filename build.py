@@ -21,7 +21,7 @@ for html_path in tld_html:
         html = html.replace(include_fmt, "\n" + include + "\n")
     #soup = bs(html, features="lxml")
 
-    with open(os.path.join("public", html_path), "w+") as html_fobj:
+    with open(os.path.join("docs", html_path), "w+") as html_fobj:
         html_fobj.write(html)
         print(f"> {html_path}")
 
