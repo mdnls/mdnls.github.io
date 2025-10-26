@@ -1,160 +1,89 @@
 <!DOCTYPE html>
-    <head>
-        
+<head>
+    
 <meta name="viewport" content= "width=device-width, initial-scale=1.0">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
-<title>Max Daniels - MIT</title>
+<title>Mara Daniels - MIT</title>
 <link rel="icon" href="assets/icon.ico" />
 
-	<meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
-	<title>Max Daniels - MIT</title>
-	<link rel="icon" href="assets/icon.ico" />
-    </head>
-    <body>
-        <h1 id="about">Max Daniels</h1>
-        <div class="row">
-            <div class="pagenav col">
-                <p>
-		    <a class="pagenav-link" href="#about">About</a> • <a class="pagenav-link" href="#work">Publications</a> • <a class="pagenav-link" href="assets/CV.pdf">CV</a>
-                </p>
+    <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <title>Mara Daniels - MIT</title>
+</head>
+<body>
+    <div class="row">
+        <div class="offset-md-2 col-mr-4 col-md-4 col-xs-12 my-md-1 id="about">
+            <h1 id="about">Mara Daniels</h1>
+            <p><span id="email">maradan<span style="display:none">_</span></span> 
+                <br/>
+                <a href="https://scholar.google.com/citations?user=7hL2f54AAAAJ&hl=en">Scholar</a> : <a href="https://twitter.com/m_dnls">Twitter</a> : <a href="https://github.com/mdnls">GitHub</a>.
+            </p>
+            <p>I am an Applied Mathematics PhD candidate at MIT. My advisor is <a href="https://math.mit.edu/~rigollet">Phillipe Rigollet</a>. I am primarily interested in developing principled methodologies for deep machine learning, typically in the context of image generation and imaging or spatial inverse problems. Previously, I was fortunate to work under the supervision of <a href="https://khoury.northeastern.edu/home/hand/">Dr. Paul Hand</a> at Northeastern University and <a href="https://people.epfl.ch/lenka.zdeborova/?lang=en">Dr. Lenka Zdeborová</a> at EPFL.
+            </p>
+        </div>
+        <div class="offset-md-1 col-md-4 col-xs-3 my-md-1 my-2">
+            <img src="assets/Mara.jpeg" width="300px" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-md-2 col-md-8 col-xs-12">
+            <h3>News</h3>
+            <ul>
+                <li><em>June 2025</em>. I am visiting the Simons Laufer institute for the <a href="https://www.slmath.org/summer-schools/1102">Statistical Optimal Transport</a> summer school.</li>
+                <li><em>April 2025</em>. I am speaking at HU Berlin on the contractivity of stochastic interpolation flow.</li>
+            </ul>
+            <i>I am actively searching for motivated collaborators to work on <a href="#">Splat Regression Modeling</a>. If you are interested, please email me with a description of your background and interests.</i>
+        </div>
+    </div>
+    <hr class="col-md-8" />
+    <div class="row">
+        <div class="offset-md-2 col-md-8 col-xs-12" >
+            <h3 id="work">Publications</h3>
+            <p><i>* indicates equal contribution.</i></p>
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://arxiv.org/abs/2205.13503">On the Contractivity of Stochastic Interpolation Flow</a>
+                    <div class="inset">
+                        <p><span class="feat">M. Daniels</span>.
+                            <br/>
+                            We investigate stochastic interpolation, a recently introduced framework for high dimensional sampling which bears many similarities to diffusion modeling. Like diffusion, stochastic interpolation involves sample generation through the simulation of a deterministic or stochastic evolution equation. We investigate these dynamics and prove bounds on <i>contractivity</i> of the system, uncovering some interesting comparisons to optimal transport theory.</p>
+                    </div>
+                    <a href="https://arxiv.org/abs/2205.13503">Multi-layer State Evolution Under Random Convolutional Design.</a>
+                    <div class="inset">
+                        <p><span class="feat">M. Daniels</span>*, Cédric Gerbelot*, Florent Krzakala, Lenka Zdeborová. <span class="feat">Published in NeurIPS 2022</span>.
+                        <br/> 
+                        We study signal recovery in a multi-layer model with convolutional matrices, which is a simple model for a convolutional neural network. We prove state evolution equations for Approximate Message Passing, an algorithm that can be used to compute posterior statistics in high dimensional Bayesian models. These equations provide a tractable method to predict signal recovery error in a large-size limit. </p>
+                    </div>
+                    <a href="https://arxiv.org/abs/2110.03237">Score-based Generative Neural Networks for Large-Scale Optimal Transport.</a>
+                    <div class="inset">
+                        <p><span class="feat">M. Daniels</span>, Tyler Maunu, Paul Hand. <span class="feat">Published in NeurIPS 2021</span>.
+                        <br/>
+                        We propose a new method to solve a regularized form of the Optimal Transport problem. The goal is to learn a transportation plan between a given source and target probability distribution so that the cost to execute that plan is minimized. We prove global optimization guarantees for a fast, large-scale learning algorithm to solve this problem and we demonstrate strong empirical performance.</p>
+                    </div>
+                    <a href="https://arxiv.org/abs/2102.11163">Generator Surgery for Compressed Sensing</a>
+                    <div class="inset">
+                        <p>Jung Yeon Park*, Niklas Smedemark-Marguilies*, <span class="feat">M. Daniels</span>, Rose Yu, Jan-Willem van de Meent, Paul Hand. Presented at <span class="feat">NeurIPS 2020 Deep Inverse Workshop</span>.
+                        <br/> 
+                        Generative priors for imaging inverse problems allow one to model images from a dataset by generating samples from the dataset. We demonstrate a simple method to improve recovery performance by modifying these priors after training, but this performance boost comes at the cost of no longer being able to generate samples using the prior.</p>
+                    </div>
+                    <a href="https://arxiv.org/abs/1905.11672">Invertible generative models for inverse problems: mitigating representation error and dataset bias.</a>
+                    <div class="inset">
+                        <p>Muhammad Asim*, <span class="feat">M. Daniels</span>*, Oscar Leong, Paul Hand, and Ali Ahmed. <span class="feat">Published in ICML 2020</span>.
+                        <br/>
+                        In an imaging inverse problem, one must recover missing information about a target image using prior assumptions on the image structure. We show that Invertible Neural Networks can be used to vastly outperform classical approaches when one has access to a dataset of known images.</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-7 col-xs-12 my-md-1 my-2" id="about">
-                <p>I am a PhD student working with <a href="https://math.mit.edu/~rigollet/">Phillipe Rigollet's</a> group at MIT. I'm interested in the intrinsic structures of large, high-dimensional datasets and the conditions under which these structures can be recovered, compressed, or visualized. Previously, I worked on topics in imaging inverse problems, generative modeling with deep neural networks, and optimal transport, under the various supervisions of <a href="https://khoury.northeastern.edu/home/hand/">Dr. Paul Hand</a> at Northeastern University and <a href="https://people.epfl.ch/lenka.zdeborova/?lang=en">Dr. Lenka Zdeborová</a> at EPFL.
-                </p>
-            </div>
-            <div class="offset-md-1 col-md-4 col-xs-12 my-md-1 my-2">
-                <img src="assets/Max.jpg" width="150px" />
-            </div>
-        </div>
-        <hr />
-        <div class="row">
-            <div class="col-12">
-                <b>Contact Me</b>
-                <p>Please reach out by email: <img style="height:26px;padding-bottom:6px;" src="assets/My_Email.jpg" />. <br />
-                    Alternatively, on social media: <a href="https://twitter.com/m_dnls">Twitter</a>, <a href="https://www.linkedin.com/in/mdnls/">LinkedIn</a>, and <a href="https://github.com/mdnls">GitHub</a>.</p>
-            </div>
-        </div>
+    </div>
+</body>
 
-        <h2 id="work">Publications</h2>
-        <p><i>* indicates equal contribution.</i></p>
-        <div class="row">
-            <div class="col-12">
-                <a href="https://arxiv.org/abs/2205.13503">Multi-layer State Evolution Under Random Convolutional Design.</a>
-                <div class="inset">
-                    <p><span class="feat">Max Daniels</span>*, Cédric Gerbelot*, Florent Krzakala, Lenka Zdeborová. <span class="feat">Published in NeurIPS 2022</span>.</p>
-                    <p>We study signal recovery in a multi-layer model with convolutional matrices, which is a simple model for a convolutional neural network. We prove state evolution equations for Approximate Message Passing, an algorithm that can be used to compute posterior statistics in high dimensional Bayesian models. These equations provide a tractable method to predict signal recovery error in a large-size limit. </p>
-                </div>
-                <a href="https://arxiv.org/abs/2110.03237">Score-based Generative Neural Networks for Large-Scale Optimal Transport.</a>
-                <div class="inset">
-                    <p><span class="feat">Max Daniels</span>, Tyler Maunu, Paul Hand. <span class="feat">Published in NeurIPS 2021</span>.</p>
-                    <p>We propose a new method to solve a regularized form of the Optimal Transport problem. The goal is to learn a transportation plan between a given source and target probability distribution so that the cost to execute that plan is minimized. We prove global optimization guarantees for a fast, large-scale learning algorithm to solve this problem and we demonstrate strong empirical performance.</p>
-                </div>
-                <a href="https://arxiv.org/abs/2102.11163">Generator Surgery for Compressed Sensing</a>
-                <div class="inset">
-                    <p>Jung Yeon Park*, Niklas Smedemark-Marguilies*, <span class="feat">Max Daniels</span>, Rose Yu, Jan-Willem van de Meent, Paul Hand. Presented at <span class="feat">NeurIPS 2020 Deep Inverse Workshop</span>.</p>
-                    <p>Generative priors for imaging inverse problems allow one to model images from a dataset by generating samples from the dataset. We demonstrate a simple method to improve recovery performance by modifying these priors after training, but this performance boost comes at the cost of no longer being able to generate samples using the prior.</p>
-                </div>
-                <a href="https://arxiv.org/abs/1905.11672">Invertible generative models for inverse problems: mitigating representation error and dataset bias.</a>
-                <div class="inset">
-                    <p>Muhammad Asim*, <span class="feat">Max Daniels</span>*, Oscar Leong, Paul Hand, and Ali Ahmed. <span class="feat">Published in ICML 2020</span>.</p>
-                    <p>In an imaging inverse problem, one must recover missing information about a target image using prior assumptions on the image structure. We show that Invertible Neural Networks can be used to vastly outperform classical approaches when one has access to a dataset of known images.</p>
-                </div>
-               
-                <a href="http://mdnls.cc/prob-vis">Statistical Distances and Their Implications to GAN Training.</a>
-                <div class="inset">
-                    <p><span class="feat">Max Daniels</span>. Presented at VISxAI workshop at IEEE VIS 2019. <span class="feat">Honorable mention for best submission</span>.</p>
-                    <p>This is an interactive article about the role of statistical distances like Kullback Leibler Divergence and Earth Mover's Distance in training Generative Adversarial Networks (GANs).</p>
-                </div>
-
-
-                <a href="https://ghost-clusters.github.io/icerm-spectral-clustering/html/Graph%20Spectral%20Clustering.pdf">An Overview of Graph Spectral Clustering and Partial Differential Equations.</a>
-                <div class="inset">
-                    <p><span class="feat">Max Daniels</span>*, Catherine Huang*, Chloe Makdad*, Shubham Makharia*. Product of a 2020 summer undergraduate research program run by the Institute for Computational and Experimental Research in Mathematics.</p>
-                    <p>Clustering is a useful tool in data analysis. We explain the connection between the graph spectral clustering algorithm and the physical process of heat diffusion.</p>
-                </div>
-            </div>
-        </div>
-<<<<<<< HEAD
-        <h2 id="resources">Resources</h2>
-        <div class="row">
-            <div class="col-12">
-                <ul>
-                    <li><a href="">Template</a> for Typst</li>
-                </ul>
-            </div>
-        </div>
-        <p>More coming soon!</p>
-=======
-
->>>>>>> bfde7bf0db851afb67530ed43bd5f45691a1ccc2
-        <!--
-        <h2 id="awards">Awards</h2>
-        <div class="row">
-            <div class="col-12">
-                <p><em>Finalist for 2022 Hertz Fellowship</em>. This PhD fellowship program awards funding to doctoral students in applied physical, biological and engineering sciences. In 2022 the committee received 650 applications, chose 45 finalists, and awarded 13 fellows. </p>
-                <p><em>Finalist for 2022 Computing Research Associations Undergraduate Research Award</em>. This annual award recognizes undergraduates who show outstanding potential in an area of undergraduate computing science research. In 2022 the committee chose 77 honorable mention recipients, 20 finalists, 4 runners up, and 4 awardees.</p>
-                <p><em>Finalist for 2022 Computing Research Associations Undergraduate Research Award</em>. This annual award recognizes undergraduates who show outstanding potential in an area of undergraduate computing science research. In 2022, the committee chose 77 honorable mention recipients, 20 finalists, 4 runners up, and 4 awardees.</p>
-                <p><em>Recipient of 2020 Barry Goldwater Scholar Award</em>. This annual award recognizes undergraduates who show outstanding potential for contributions to an area of scientific research in the natural sciences, mathematics or engineering. In 2020, the committee chose 22 recipients in Computer Science.</p>
-                <p><em>Summit Research Award</em>. Recipient of a Northeastern University internal research award of $3000.</p>
-                <p><em>University Honors Early Research Award</em>. Recipient of a Northeastern University Honors Program award for outstanding research by a freshman or sophomore student in the amount of $1000.</p>
-            </div>
-        </div>
-        -->
-        
-            <!-- Is this even worth listing? Not my original work...
-        <h2 id="talks">Talks</h2>
-        <div class="row">
-            <div class="col-12">
-                <a href="https://mdnls.cc/prob-vis/SUMS.html">Semantic Manipulations through Learned Information Representations.</a> March 2020.
-                <div class="inset">
-                    <p>Invited talk given at Brown University's Symposium for Undergraduates in the Mathematical Sciences.</p>
-                    <p>The talk and slides begin with an overview of Noise Contrastive Estimation for generative modeling. They explain the Word2Vec algorithm as a simplification of NCE with interpretable parameters, then explain how Generative Adversarial training uses ideas from NCE to learn to efficiently approximately sample a data distribution.  </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="https://drive.google.com/drive/folders/1vj3D_xyLZgbav5Ph2C8kuJLbBdmgC5Ps?usp=sharing">ASME Machine Learning Workshop.</a> June 2019.
-                <div class="inset">
-                    <p>Co-organized three week workshop on machine learning for Northeastern's chapter of the American Society of Mechanical Engineers.</p>
-                    <p>Emphasis in the workshop was placed on regression, decision trees, and boosting models.</p>
-                </div>
-            </div>
-
-            <div class="col-12">
-                Expository Presentation of <i>Recovering low-rank matrices from few coefficients in any basis</i> by D. Gross. February 2020.
-                <div class="inset">
-                    <p>Class presentation given in CS 7180 Special Topics in AI to an audience of Professors and PhD students.</p>
-                    <p>While a general matrix has $O(n^2)$ parameters, a rank $r$ matrix has only $O(nr)$ degrees of freedom. The paper shows that $O(nr \log^2(n))$ <i>random linear measurements</i> of a rank $r$ matrix are sufficient to uniquely determine its parameters with high probability.</p>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="service">Service</h2>
-        <div class="row">
-            <div class="col-12">
-                <p>I care about educational outreach and activism. Here are some of the ways I'm involved:
-                    <ul>
-                        <li><a href="#">Mathematics Engagement and Mentorship Association</a> - I am the chairperson and communications lead for the MathEMA, the NEU Math Department's student mentorship organization. Our goal is to create a more welcoming and diverse environment by connecting young mathematics undergraduates with more experienced mentors.</li>
-                        <li><a href="#">Math Club</a> - I hold a position on the executive board of the NEU Math Club. I assist in coordinating weekly events like invited talks, problem solving workshops, and social events.</li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-
-        -->
-        </div>
-    </body>
-    
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>

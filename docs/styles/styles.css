@@ -7,6 +7,11 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 50px auto;
   width: 60%;
+  font-size: 14px;
+}
+
+#email::after {
+  content: "@" "mit.edu";
 }
 
 .row {
@@ -20,16 +25,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:visited {
-  color: #68a1d3;
+  color: #bb73dc;
   font-weight: 400;
   text-decoration: none;
 }
 a:hover, a:visited:hover {
-  color: #2E5475;
+  color: #8e57a7;
   text-decoration: none;
 }
 a:clicked, a:visited:clicked {
-  color: #2E5475;
+  color: #8e57a7;
 }
 
 em {
@@ -39,7 +44,6 @@ em {
 .inset {
   width: 95%;
   margin: auto 2.5%;
-  font-size: 16px;
 }
 
 .feat {
@@ -63,7 +67,7 @@ em {
 }
 .pagenav-link:hover {
   text-decoration: none;
-  color: #68a1d3;
+  color: #bb73dc;
 }
 
 /*# sourceMappingURL=styles.css.map */
