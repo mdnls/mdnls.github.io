@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 // light light, light, medium, dark, dark dark blue
-$blue-ll: #AAD3F7;
-$blue-l: #76baf5;
-$blue-m: #68a1d3;
-$blue-d: #2E5475;
-$blue-dd: #516475;
+$blue-m: #bb73dc;
+$blue-d: #8e57a7;
 
 .container {
 	margin-top: 50px;
@@ -15,7 +12,10 @@ body {
 	font-family: 'Roboto', sans-serif;
 	margin: 50px auto;
 	width: 60%;
+	font-size: 14px;
 }
+
+#email::after { content: '@' 'mit.edu'; }
 
 .row {
 	margin-bottom: 10px;
@@ -48,7 +48,6 @@ em {
 .inset {
 	width: 95%;
 	margin: auto 2.5%;
-	font-size: 16px;
 }
 
 .feat {

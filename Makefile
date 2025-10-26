@@ -8,13 +8,13 @@ page :
 
 .PHONY : all
 all : sty page
-	@cp -r tensorvis docs/
+	@cp -r tensorvis public/
 
 
 .PHONY : watch
 watch :
 	@echo "Watching..."
-	@fswatch . --exclude docs | (while read; do make all; done)
+	@fswatch . --exclude public | (while read; do make all; done)
 
 .PHONY : deploy
 deploy : all
