@@ -8,7 +8,7 @@ page :
 
 .PHONY : all
 all : sty page
-	@cp -r tensorvis public/
+	@cp -R public/
 
 
 .PHONY : watch
@@ -18,4 +18,6 @@ watch :
 
 .PHONY : deploy
 deploy : all
-	@git commit public --quiet -m "Automated deploy commit" || echo "Deploying with no changes."
+	@cp -R public/* docs
+	@git commit public docs --quiet -m "Automated deploy commit" || echo "Deploying with no changes."
+	@git push github main
