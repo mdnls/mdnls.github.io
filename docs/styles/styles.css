@@ -3,6 +3,11 @@
   margin-top: 50px;
 }
 
+@media (max-width: 575.98px) { /* Bootstrap's xs breakpoint */
+  body {
+    width: 85% !important;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   margin: 50px auto;
