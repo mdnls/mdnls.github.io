@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Asymptotic Non-gaussianity of Generalized Likelihood Ratio Test</h1>
+<p>
+The <a href="Likelihood Ratio Test.html">Generalized Likelihood Ratio Test</a> is designed to test hypothesis of the form $H_0 : y \sim p_0$ (simple null) and $H_1 : y \sim p_\theta$, $\theta \in \Theta \setminus \{\emptyset\}$. It is based on the quantity
+$$
+L_n(Y^n) = \sup_{\theta \in \Theta}\frac{1}{n}\sum_{i=1}^n \log  \frac{P_\theta(y_i)}{P_0(y_i)}
+$$
+where $Y^{n} = \begin{bmatrix} y_1 & y_2 & \ldots & y_n \end{bmatrix}$ is a vector of i.i.d. samples.
+</p>
+<p>
+To compute $p$-values for this test and control the false alarm probability, we need to know the distribution of $L_n(Y^n)$ under $H_0$.
+</p>
+<hr />
+<p>
+<strong>Example (Gaussian Means Testing)</strong>. let $P_\theta = \Ncl(\theta, I_d)$. Then
+$$
+\log \frac{P_\theta(y)}{P_0(y)} = -\frac{1}{2}\left( \|y-\theta\|_2^2 - \|y\|_2^2 \right) = \langle \theta, y\rangle - \frac{\|\theta\|_2^2}{2}
+$$
+so the GLRT is $L_n(Y^n) = \sup_{\theta} \{\langle \theta, y \rangle - \frac{\|\theta\|^2_2}{2} \} = \frac{\|y\|^2}{2}$. Under the null hypotheses, $2 L_n(Y^n) \sim \chi^2(\nu=n)$.
+</p>
+<hr />
+<p>
+It turns out that this is a general phenomenon!
+</p>
+<hr />
+<p>
+<strong>Proposition (GLRT Asymptotics)</strong>. assume that $\theta_0$ belongs to the interior and that $\theta \mapsto P_\theta$ satisfies the regularity conditions of <a href="Maximum Likelihood.html">maximum likelihood estimation</a>. Then as $n \to \infty$,
+$$
+-2 L_n(Y^n) \stackrel{d}{\longrightarrow}\chi^2(\nu=d)
+$$
+where $d$ is the dimension of $\theta \in \Theta$.
+</p>
+<hr />
+<p>
+<em>Proof</em> . The idea is that, since $\sup_{\theta \in \Theta} \frac{1}{n}\sum_{i=1}^n \log P_\theta(y_i)$ is precisely the maximum likelihood, we can analyze GLRT using asymptotic normality. As $n \to \infty$, $\sqrt{n}(\hat{\theta}^{\mathsf{MLE}}_n - \theta_0) \stackrel{d}{\longrightarrow} \Ncl(0, I(\theta_0)^{-1})$, and the idea behind the proposition is that
+$$- 2n L_n(Y^n) \stackrel{d}{\longrightarrow} -2n \KL(P_{\theta_0} \mid P_{\theta^{\mathsf{MLE}}_n})$$
+so that we can compute the limiting distribution using the Delta method. Set $G(\theta) = - \KL(P_{\theta_0} \mid P_{\theta})$, then
+$$
+\begin{aligned}
+G(\theta_0) & = 0 \\
+\nabla G (\theta_0) &= 0 \\
+\nabla^2 G(\theta_0) & = \E_{y \sim \theta_0}\left[-\nabla^2 \log P_\theta(y)\right]\biggr \rvert_{\theta = \theta_0} = I(\theta_0)
+\end{aligned}
+$$
+which implies that
+$$-2n L_n(Y^n) \stackrel{d}{\longrightarrow} \frac{n}{2}  (\theta^{\mathsf{MLE}} - \theta_0)^T[\nabla^2 G(\theta_0)]  (\theta^{\mathsf{MLE}} - \theta_0) \stackrel{d}{\longrightarrow} \chi^2(\nu=d).$$
+</p>
+<p>
+<ins>This should generalize to any M-estimator! That is: if asymptotic normality holds for the parameter, then since the parameter is converging to a minimizer of the risk, the asymptotic distribution of the risk will be chi squared.</ins>
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

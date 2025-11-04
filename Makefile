@@ -1,6 +1,6 @@
 .PHONY : sty
 sty :
-	@sass styles:public/styles
+	@sass styles:docs/styles
 
 .PHONY : page
 page : 
@@ -8,8 +8,6 @@ page :
 
 .PHONY : all
 all : sty page
-	@cp -R public/
-
 
 .PHONY : watch
 watch :
@@ -18,6 +16,5 @@ watch :
 
 .PHONY : deploy
 deploy : all
-	@cp -R public/* docs
 	@git commit public docs --quiet -m "Automated deploy commit" || echo "Deploying with no changes."
 	@git push github main

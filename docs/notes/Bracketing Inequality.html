@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Bracketing Inequality</h1>
+<p>
+Let $\Fcl$ be a model class, let $X_1, \ldots, X_n \sim \mu$ i.i.d., and consider the <a href="Empirical Process Theory.html">empirical process</a> $(G_n(f))_{f \in \Fcl}$ defined by
+$$
+G_n(f) = \frac{1}{\sqrt{n}}\sum_{i=1}^n (f(X_i) - \E_\mu[f(X)])
+$$
+Bracketing techniques can be used to control the suprema $\E[\sup_{f \in \Fcl}G_n(f)]$ in a way that might improve on techniques like <a href="Dudley's Entropy Integral.html">Dudley's Entropy Integral</a>. For more discussion, see <a href="Chaining Inequalities.html">Chaining Inequalities</a>.
+</p>
+<hr />
+<p>
+<strong>Definition (bracket)</strong>. We say that $\Rcl$ is an $\eps$-bracket of $\Fcl$ in the norm $\|\cdot \|$ if the following hold:
+</p>
+<ol>
+<li>The bracket is a sequence of pairs: $\Rcl = \{(f^+_i, f^-_i) \subset \Fcl : i = 1 \ldots |\Rcl|\}$.
+</li>
+<li>Each $f \in \Fcl$ is <em>sandwiched</em> by some bracket: there exists $i \in [|\Rcl|]$ so $f_i^-(x) \leq f(x) \leq f^+_i(x)$ for all $x \in \Xcl$.
+</li>
+<li>The brackets are close in $\| \cdot\|$: for all $i = 1 \ldots |\Rcl|$, we have $\|f_i^+ - f_i^-\| \leq \eps$.
+</li>
+</ol>
+<p>
+We define the bracketing number $\Ncl_{[]}(\Fcl, \| \cdot \|, \eps)$ as the minimum cardinality of any $\eps$-bracket of $\Fcl$.
+</p>
+<hr />
+<p>
+The bracketing number $\Ncl_{[]}$ plays a role similar to that of the <a href="Packing and Covering Numbers.html">covering number</a> in a chaining inequality. In a chaining bound, the strategy is to approximate $G_n(f)$ by a process $G_n(\pi(f))$, where $\pi(f)$ projects $f$ onto an $\eps$-cover of $\Fcl$. The error term $G_n(f) - G_n(\pi(f))$ is controlled by a property like <a href="Lipschitz Stochastic Process.html">lipschitzness</a>, and the supremum over $\pi(\Fcl)$ is controlled by chaining with a <a href="Discrete Maximal Inequality.html">Discrete Maximal Inequality</a>. The key difference of the bracketing bound is that the remainder term is controlled in a different way.
+</p>
+<hr />
+<p>
+<strong>Proposition (one-step bracketing inequality)</strong>. We have the following bracket-based analogue of the <a href="One-step Chaining Inequality.html">One-step Chaining Inequality</a>:
+$$
+\E\left[\sup_{f \in \Fcl} G_n(f)\right]\leq \inf_{\eps \geq 0} \left\{ \eps \sqrt{n} + \sup_{f \in \Fcl} \|f\|_\infty \sqrt{2 \, \Ncl_{[]}(\Fcl, \| \cdot \|_{\Lcl^1(\mu)}, \eps)}\right\}
+$$
+</p>
+<hr />
+<p>
+<em>Proof</em>. Fix $\eps > 0$ and let $\Rcl$ be a minimal $\eps$-bracket in $\Lcl^1(\mu)$ of $\Fcl$. Let $\pi : \Fcl \to [|\Rcl|]$ return, for each $f \in \Fcl$, the index $\pi(f) \in [|\Rcl|]$ such that $f_{\pi(f)}^- \preccurlyeq f \preccurlyeq f_{\pi(f)}^+$. Then we have,
+$$
+\begin{aligned}
+G_n(f) = \frac{1}{\sqrt{n}}\sum_{i=1}^n f(X_i) - \mu(f) & \leq \frac{1}{\sqrt{n}}\sum_{i=1}^n (f^+_{\pi(f)}(X_i) - \E_\mu[f^-_{\pi(f)}]) \\
+& \leq \sqrt{n}\,  \E_\mu[f_{\pi(f)}^+ (X) - f_{\pi(f)}^-(X)] + G_n(f^+)
+\end{aligned}
+$$
+<span class="qed" />
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

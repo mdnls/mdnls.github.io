@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+.container {
+  margin-top: 50px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 50px auto;
+  width: 60%;
+  font-size: 14px;
+}
+
+#email::after {
+  content: "@" "mit.edu";
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Crimson Text", serif;
+  margin-block-start: 0px;
+  margin-block-end: 10px;
+}
+
+a, a:visited {
+  color: #bb73dc;
+  font-weight: 400;
+  text-decoration: none;
+}
+a:hover, a:visited:hover {
+  color: #8e57a7;
+  text-decoration: none;
+}
+a:clicked, a:visited:clicked {
+  color: #8e57a7;
+}
+
+em {
+  font-weight: 600;
+}
+
+.inset {
+  width: 95%;
+  margin: auto 2.5%;
+}
+
+.feat {
+  text-decoration: underline;
+}
+
+.pagenav-link {
+  color: black;
+  display: inline;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.pagenav-link:visited {
+  text-decoration: none;
+  color: black;
+}
+.pagenav-link:hover {
+  text-decoration: none;
+  color: black;
+}
+.pagenav-link:hover {
+  text-decoration: none;
+  color: #bb73dc;
+}
+
+/*# sourceMappingURL=styles.css.map */

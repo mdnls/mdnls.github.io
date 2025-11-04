@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Asymptotic Super-efficiency</h1>
+<p>
+<strong>Definition</strong>. let $p_\theta(y)$ a density and let $\hat{\theta}_n$ be an estimator for $\theta$. The estimator is said to be super-efficient if its <a href="Asymptotic Efficiency.html">efficiency</a> matches the Cramér-Rao lower bound for all $\theta \in \Theta$, and <em>improves</em> on it for at least one $\theta \in \Theta$.
+</p>
+<p>
+<strong>Example</strong>: Hodges' Estimator.
+</p>
+<ul>
+<li>Let $p_\theta \in \{\Ncl(\theta, 1) : \theta \in \R\}$. Consider the estimator $$
+</li>
+</ul>
+<p>
+T_n = \begin{cases} \hat{x}_n & |\hat{x}_n| \geq n^{-1/4} \\ 0 & \text{otherwise} \end{cases}
+$$
+For any $\theta \not = 0$, with sufficiently large $n \gg 1$, it follows from the CLT that $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 0$ in probability and hence $\sqrt{n}(T_n - \theta) \stackrel{d}{\longrightarrow} \Ncl(0, 1)$. But when $\theta = 0$, by a similar argument, $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 1$ which converges <em>faster</em> than what is predicted by the CLT.
+</p>
+<ul>
+<li>This example is a trick! It abuses the fact that asymptotic efficiency is a <em>pointwise</em> diagnostic for each $\theta \in \Theta$. While enjoying excellent performance at $\theta = 0$, it has extremely poor performance in a shrinking neighborhood of zero.
+</li>
+</ul>
+<p>
+<strong>Hàjek-Le Cam Convolution Theorem</strong>: consider an estimator $\theta_n$ such that for some family of R.V.s $\{V_\theta : \theta \in \Theta\}$, $\sqrt{n}(\theta_n - \theta) \stackrel{d}{\longrightarrow} V_\theta$ for every $\theta$. Then there is a family of R.V.s $\{U_\theta : \theta \in \Theta\}$ such that,
+$$
+V_\theta \stackrel{d}{=} Z_\theta + U_\theta \qquad \text{a.e. $\theta \in \Theta$}
+$$
+where $Z_\theta \sim N(0, [I(\theta)]^{-1})$ is independent of $U_\theta$.
+</p>
+<p>
+<em>Remark</em>: as a consequence of independence, $\Cov_\theta(V_\theta) = \Cov(Z_\theta) + \Cov(U_\theta) \succcurlyeq [I(\theta)]^{-1}$. So, the Cramér-Rao bound holds for almost every $\theta \in \Theta$.
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

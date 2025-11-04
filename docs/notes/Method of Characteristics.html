@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Method of Characteristics</h1>
+<p>
+The general idea of the method of characteristics is to solve a PDE by reducing it to an ODE along a parametrized curve in its domain. For example, consider the equation
+$$
+(Lu)(t, x) = 0
+$$
+where $L : C^k(\R^d) \to C(\R^d)$ is some $k$-th order differential operator. In the method of characteristics, the goal is to construct a parametrized curve $X(t) : \R \to \R^d$ such that $(Lu)(t, X(t)) = 0$ is converted into a simple ODE in time. For example, see <a href="Transport and Continuity PDEs.html#solution-via-method-of-characteristics">solving the transport PDE via Method of Characteristics</a>.
+</p>
+<h2 id="general-method">General Method</h2>
+<p>
+Consider the nonlinear, first-order PDE
+$$
+F(\nabla u, u, x) = 0
+$$
+where $F(p, z, x) : \R^n \times \R \times \R^n \to \R$ is a generic function. How can we derive the characteristic PDE associated with $F$? Introduce a parametrized curve $x(s) : I \to \R^n$ where $I \subseteq \R$ is an interval. Similarly, write $z(s) = u(x(s))$ and $p(s) = [\nabla u](x(s))$. What are the dynamics of $(x, z, p)$? Differentiating with respect to $s$ yields,
+$$
+\begin{aligned}
+\dot{p}_i(s) & = \sum_{j=1}^n u_{x_i, x_j} \dot{x}_j(s) = [\nabla^2 u] \dot{x}(s) \\
+\dot{z}(s) & = \langle \nabla u, \dot{x}(s)\rangle = \langle p, \dot{x}(s) \rangle
+\end{aligned}
+$$
+But it is not clear how to compute $\dot{x}(s)$ or $D^2 u$. It turns out that we can use the PDE to compute a prescription for $\dot{x}(s)$ which <em>eliminates</em> the Hessian term, thereby closing the equations. To do so, differentiate the PDE with respect to $x$:
+$$
+\begin{aligned}
+0 = \nabla_x F(Du, u, x) & =  [\nabla^2 u][\nabla_p F] + F_{z} \nabla u + \nabla_x F \quad \implies \quad [\nabla^2 u] [\nabla_p F] = - F_z \nabla u + \nabla_x F.
+\end{aligned}
+$$
+So, if we set $\dot{x}(s) = \nabla_p F(p(s), z(s), x(s))$ then we arrive at the closed system of <em>characteristic ODEs</em>,
+$$
+\begin{aligned}
+\dot{x}(s) & = \nabla_pF(p, z, x) \\
+\dot{z}(s) & = \langle p, \dot{x}(s) \rangle = \langle \nabla_p F(p, z, x), p\rangle\\
+\dot{p}(s) & = -F_z(p, z, x) \cdot p + \nabla_x F(p, z, x)
+\end{aligned}
+$$
+And we also have a <em>conservation property</em>,
+$$ F(p(s), z(s), x(s)) = 0$$
+along the flow. Given the boundary condition $\nabla u(x) = G(x), u(x) = f(x),\ x \in \delta \Omega$, one can then simulate the characteristic ODEs using a time stepping scheme by initializing at $x_0 \in \delta \Omega$ and setting
+$$
+x(s_0) \coloneqq x_0 \qquad p(s_0) = G(x_0) \qquad z(s_0) = g(x_0).
+$$
+</p>
+<h3 id="solutions">Solutions</h3>
+<p>
+In some cases it is possible to exactly solve the characteristic ODE, or eliminate some variables.
+</p>
+<p>
+<strong>Linear, homogeneous PDE</strong>: when $F(p, z, x) = b(x) \cdot p + c(x) z$. Then we can eliminate $p$ from the characteristic system:
+$$
+\begin{aligned}
+\dot{x}(s) & = b(x) \\
+\dot{z}(s) & = \langle p, \dot{x}(s) \rangle = F(p, z, x)-c(x)z  \\
+& = -c(x)z
+\end{aligned}
+$$
+which is often easy to solve explicitly by first integrating $\dot{x}(s)= b(x)$, then $\dot{z}(s) = -c(s) z$. This of course recovers  the exponential semigroup associated with the linear differential system.
+</p>
+<p>
+<strong>Quasilinear, homogenous PDE</strong>: as we will see, quasilinear PDEs also enable the elimination of $p(s)$, leading to a method of solution which is similar to the linear case. A quasilinear PDE corresponds to $F(p, z, s) = b(x, z) \cdot p + c(x, z) z$. Then we have,
+$$
+\begin{aligned}
+\dot{x}(s) & = b(x, z) \\
+\dot{z}(s) & = - c(x, z) z
+\end{aligned}
+$$
+as above.
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

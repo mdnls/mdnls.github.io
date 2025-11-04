@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Cramer-Rao Lower Bound</h1>
+<p>
+See also: <a href="Chi-Squared Divergence.html#8b1a19">variational definition of chi-squared divergence</a>.
+</p>
+<hr />
+<p>
+<strong>Theorem: Univariate Cramer-Rao Bound</strong>. let $y \mapsto T(y)$ be a sufficient statistic for the family $\{p_\theta : \theta \in \Theta\}$ with expectation $\E_\theta[T(y)] = \Psi(\theta)$. Then $\Var(T(y)) \geq \frac{\Psi'(\theta)^2}{I(\theta)}$.
+</p>
+<hr />
+<p>
+<em>Proof</em>. Denote by $s_\theta(y)$ the <a href="Fisher Information.html">score</a> of $p_\theta(y)$. By Cauchy-Schwartz,
+$$
+\begin{aligned}
+\Cov_\theta[s_\theta, T(y)]^2 \leq \underbrace{\Var_\theta(s_\theta)}_{I(\theta)} \  \Var_\theta(T(y))
+\end{aligned}
+$$
+and the bound follows from the fact that, since $\E_\theta[s_\theta] = 0$,
+$$
+\begin{aligned}
+\Cov_\theta[s_\theta, T(y)] & = \int \left( \frac{\nabla_\theta p_\theta(y)}{p_\theta(y)} \right)T(y) p_\theta(y) \, dy  \\
+& = \nabla_\theta \int T(y) p_\theta(y) \, dy \\
+& = \Psi'(\theta).
+\end{aligned}
+$$
+<span class="qed" />
+</p>
+<hr />
+<p>
+<strong>Theorem: Multivariate Cramer-Rao Bound</strong>. consider the same setting as above where $T(y) \in \R^m$, $\theta \in \R^d$, and $Y \in \Ycl$. Then,
+$$
+\Cov_\theta(T(y)) \succcurlyeq [D \Psi(\theta)]^T I(\theta)^{-1} [D \Psi(\theta)].
+$$
+</p>
+<hr />
+<p>
+<em>Proof</em>. by the <a href="Schur Complement Formula.html">Schur Complement Formula</a> the above inequality holds if and only if the following matrix is positive semidefinite:
+$$
+\Sigma \coloneqq \begin{bmatrix} \Cov_\theta(T(y)) & D \Psi(\theta) \\ [D \Phi(\theta)]^T & I(\theta)\end{bmatrix}.
+$$
+To prove this we can construct a random variable whose covariance is $\Sigma$. Since $I(\theta) = \Cov_\theta(\nabla_\theta \log p_\theta(Y))$, the obvious choice is
+$$
+Z = \begin{bmatrix} T(y) & \nabla_\theta \log p_\theta(Y)\end{bmatrix}.
+$$
+Clearly, $\Cov(Z)$ matches $\Sigma$ on the diagonal blocks. To verify the off diagonal, note that
+$$
+\begin{aligned}
+\Cov_\theta(T(y), \nabla_\theta \log p_\theta(Y))_{ij} & = \E[(T(Y) - \Psi(\theta))_i \ \partial_{\theta_j} \log p_\theta(Y)] \\
+& = \partial_{\theta_j} \int T(y)_i  \, p_\theta(y) \, dy \\
+& = D\Psi(\theta).
+\end{aligned}
+$$
+so the claim follows. <span class="qed" />
+</p>
+<p>
+<strong>Examples/Context</strong>
+</p>
+<ul>
+<li><em>Unbiased Estimator</em>: it is common to state the Cramer-Rao lower bound for cases when $\Psi(\theta) = \theta$, so that $T(y)$ is an unbiased estimate of $\theta$.
+</li>
+<li><em>Bounding the MSE</em>: consider the bias $b(\theta) = \Psi(\theta) - \theta$. Then, the MSE can be lower bound,
+</li>
+</ul>
+<p>
+$$\text{MSE}(T(y)) \geq b(\theta)^2 + \frac{(1+b'(\theta))^2)}{I(\theta)}$$
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

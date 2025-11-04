@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Fredholm Alternative</h1>
+<p>
+A simple way to state the Fredholm alternative is with matrices. If $A : \R^n \to \R^n$ is a linear transformation, and $b \in \R^n$, then one of the following must hold.
+</p>
+<ol>
+<li>$Ax = b$  has a unique solution.
+</li>
+<li>There exists $y \in \R^n$ such that $y^T b \not = 0$ and $A^T y = 0$.
+</li>
+</ol>
+<p>
+In other words, the Fredholm Alternative states that $b \in \mathsf{Im}(A)$ if and only if $b \in \mathsf{Ker}(A^T)^{\perp}$. This is often a useful characterization of the relationship between the row and column spaces of $A$. This statement generalizes to compact operators on infinite dimensional spaces, where it can be used to prove the existence of their spectrum and of their eigenfunctions.
+</p>
+<p>
+Here is a general version of the Fredholm Alternative. This version is a bit different from the example above, because it concerns $I-K$ rather than $K$ itself.
+</p>
+<hr />
+<p>
+<strong>Theorem (Fredholm Alternative, Appendix D of <a class="broken" href="#">Evans</a>)</strong>
+Let $K : H \to H$ be a compact linear operator on a hilbert space $H$. Then,
+</p>
+<ol>
+<li>$\mathsf{Ker}(I-K)$ is finite dimensional.
+</li>
+<li>$\mathsf{Im}(I-K)$ is closed.
+</li>
+<li>$\mathsf{Ker}(I - K^*) = \mathsf{Im}(I-K)$.
+</li>
+<li>$\mathsf{Ker}(I-K) = \{0\}$ if and only if $\mathsf{Im}(I-K) = H$.
+</li>
+<li>$\mathsf{dim} \mathsf{Ker}(I-K) = \mathsf{dim}\mathsf{Ker}(I - K^*)$.
+</li>
+</ol>
+<hr />
+<p>
+Property $(4)$ implies that either $(I-K) x = b$ has a solution for each $b \in H$, or that there exists nonzero $y \in H$ such that $K y = y$.
+</p>
+<p>
+As an application, let us prove that the spectrum of a compact operator can only have a limit point at zero.
+</p>
+<hr />
+<p>
+<strong>Theorem (spectrum of compact operator)</strong> suppose $T : X \to Y$ is a compact operator between Banach spaces and that $X$ is infinite dimensional. Its spectrum is defined as
+$$
+\sigma(T) = \{\lambda : T - \lambda \mathsf \,{Id} \text{ is not invertible}\}
+$$
+Then $0 \in \sigma(T)$ and either $\sigma(T)$ is finite, or it is a sequence that converges to $0$.
+</p>
+<hr />
+<p>
+<em>Proof</em>. If $0 \not \in \sigma(T)$ then $T^{-1}$ exists. Since $T$ is compact, it is bounded (why?) and so by the <a href="https://en.wikipedia.org/wiki/Open<em>mapping</em>theorem<em>(functional</em>analysis">Bounded Inverse Theorem</a>) its inverse is also bounded. This implies $T \circ T^{-1} = \mathsf{Id}$ is compact. This is a contradiction: if $X$ is infinite dimensional then the unit ball in $X$ cannot be compact. This is easily seen by e.g. constructing an infinite basis of $X$.
+</p>
+<p>
+Next, suppose $(\eta_k)_{k \geq 0}$ is an infinite subsequence of $\sigma(T)$ that converges to $\eta \not = 0$. We will use this to construct an infinite packing of $T(B(X))$, which contradicts compactness.
+</p>
+<p>
+By property (4) of the Fredholm alternative, $\eta_k \in \sigma(T)$ that $\mathsf{Ker}(\eta_k I-T) \not = \{0\}$ and hence there exist nonzero eigenvectors $u_k \in \mathsf{Ker}(\eta_k I-T)$. These eigenvectors are linearly independent, so by Graham-Schmidt, we may associate to them a sequence of vectors $v_k \in \Hcl_k \coloneqq \mathsf{span}\{u_1, \ldots, u_k\}$ so that $v_k \in \Hcl_{k-1}^\perp$ and $\|v_k\|=1$. The point of this construction is that if $w \in \Hcl_l$ for $l < k$, then $\|w - v_l\| \geq 1$, which will become our packing.
+</p>
+<p>
+In particular, observe that $(T - \eta_k\mathsf{Id}) \Hcl_k \subseteq \Hcl_{k-1}$ since the map annihilates $v_k$. We have
+$$
+\left\|\frac{T v_k}{\eta_k} - \frac{T v_l}{\eta_l}\right\| = \left\| \frac{T v_k - \eta_k v_k}{\eta_k} - \frac{T v_l - \eta_l v_l}{\eta_l} + v_l - v_k\right\| \geq 1
+$$
+since this is the difference of $v_k$ and a point $w \in \Hcl_{k-1}$. If $\eta_k \to \eta$ we conclude that $\|T v_k - T v_l \| \geq \eta - \eps>0$ for sufficiently large $l, k$.
+<span class="qed" />
+</p>
+<h2 id="second-order-linear-differential-operators">Second order linear differential operators</h2>
+<p>
+In this section I will discuss properties of the divergence form operator
+$$
+Lu = -\sum_{i, j = 1}^n \partial_{x_i}(\alpha_{ij}(x) \partial_{x_j} u(x)) + \sum_{i=1}^n b_i(x) \partial_{x_i} u(x) + c(x) u(x),
+$$
+with its natural induced bilinear form $B[u, v]$ defined by
+$$
+B(u, v) = \sum_{i, j = 1}^n \int_{\Omega} A_{ij} \partial_{x_i} u \partial_{x_j} v + b_i \partial_{x_i}u v + c u v \, dx.
+$$
+</p>
+<hr />
+<p>
+<strong>Proposition (Fredholm alternative for SOLDOs)</strong>. precisely one of the following statements holds:
+</p>
+<ol>
+<li>Invertibility case: for each $f \in \Lcl^2(\Omega)$ there exists a weak solution $u$ of $$ \begin{cases} L u = f & x \in \Omega \\ u(x) = 0 & x \in \partial \Omega \end{cases}$$
+</li>
+<li>Non-invertibility case: there exists a nonzero solution of the 'homogeneous' problem $$ \begin{cases} L u = 0 & x \in \Omega \\ u(x) = 0 & x \in \partial \Omega \end{cases}$$
+</li>
+</ol>
+<p>
+In the second case, the set of solutions to the homogenous problem is a subspace $N \subset H^1_0(\Omega)$ of finite dimension, which equals the dimension of the kernel of the adjoint operator. That is, the set $N^*$ of solutions to
+$$
+\begin{cases}
+L^* v = 0 & x \in \Omega \\
+v(x) = 0 & x \in \partial \Omega
+\end{cases}
+$$
+has $\mathsf{dim} N^* = \mathsf{dim} N$. Finally, the in-homogeneous problem has a weak solution if and only if $f$ is orthogonal to $\mathsf{Ker}(L^*)$, that is, if $\langle f, v \rangle = 0$ for all $v \in N^*$.
+</p>
+<hr />
+<p>
+<em>Proof</em>. here is how we can convert the PDE into an appropriate linear problem. It can be shown that for sufficiently large $\mu \geq 0$, the operator $L_\mu \coloneqq L + \mu \mathsf{Id}$ becomes invertible (<a href="Garding's Inequality.html#application-existence-of-solutions-to-linear-second-order-ode">e.g. using Garding's inequality</a>).
+</p>
+<p>
+Then if $u \in H^1_0(\Omega)$ weakly solves case (1), we have $B_\mu(u, v) = \langle \mu u + f, v \rangle_H$, which implies
+$$
+u = L_\mu^{-1}(\mu u + f) \iff (\mathsf{Id} - \mu^{-1} L_\mu)^{-1} u = L_\mu^{-1} f.
+$$
+</p>
+<p>
+It remains to show that the operator $K \coloneqq \mu^{-1} L_\mu^{-1}$ is compact. If $v = K u$, then using <a href="Garding's Inequality.html">Garding's Inequality</a>, we have
+$$
+\|v\|_{H^1_0(\Omega)} \lesssim B_\mu(v, v) = \mu^{-1} \langle u, v \rangle \leq \mu^{-1} \|u\|_{\Lcl^2(\Omega)} \|v\|_{\Lcl^2(\Omega)}
+$$
+and we conclude $\|K u \|_{H^1_0(\Omega)} \lesssim \|v\|_{\Lcl^2(\Omega)}$, i.e. that $K$ is a bounded mapping from $\Lcl^2(\Omega)$ to $H^1_0(\Omega)$. By the <a href="https://en.wikipedia.org/wiki/Rellich%E2%80%93Kondrachov_theorem">Rellich-Kondrachov embedding theorem</a>, we conclude that $K$ (viewed as a mapping into $\Lcl^1(\Omega))$ the the composition of a bounded function with $\iota : H^1_0(\Omega) \to \Lcl^2(\Omega)$ which is compact.
+</p>
+<p>
+We may now apply the Fredholm alternative to $K$. Either $(\mathsf{Id} - K)u = h$ has a unique solution, or there is a nonzero solution to $(\mathsf{Id} - K) u = 0$, which corresponds to case $(2)$. The remaining properties follow by noting that $(\mathsf{Id} - K)^* = \mathsf{Id} - K^*$. <span class="qed"/>
+</p>
+<p>
+An implicit part of these arguments is the relationship between $L$, and its resolvent operator $R_\mu = (\mathsf{Id} - \mu L)^{-1}$, which is primarily the object of study in the proof. The resolvent is the object which we can apply Fredholm alternative to, and it is the object we are able to bound with Garding.
+</p>
+<h3 id="spectrum-of-a-second-order-linear-differential-operator">Spectrum of a second-order linear differential operator</h3>
+<hr />
+<p>
+<strong>Theorem (Spectrum of SOLDO, Theorem 6.5 of Evans)</strong>. There exists an at most countable set $\Sigma \subseteq \R$ such that the boundary value problem,
+$$
+\begin{cases}
+L u = \lambda u + f & x \in \Omega \\
+u(x) = 0 & x \in \partial \Omega
+\end{cases}
+$$
+has a unique weak solution (for each $f \in \Lcl^2(\Omega)$) <em>if and only if</em> $\lambda \in \Sigma$. If $\Sigma$ is infinite, then it must be of the form $\Sigma = \{\lambda_k\}_{k \geq 0}$ with $\lambda_k \to 0$.
+</p>
+<hr />
+<p>
+<em>Proof sketch</em>. The theorem is proven using similar techniques as the previous theorem.
+</p>
+<ol>
+<li>By the Fredholm alternative, the BVP is uniquely solvable if and only if $u=0$ is the only solution of the homogeneous problem
+</li>
+</ol>
+<p>
+$$ \begin{cases} L u = \lambda u & x \in \Omega \\ u(x) = 0 & x \in \partial \Omega \end{cases}$$
+</p>
+<ol>
+<li>Now, choose $\mu \not = - \lambda$ and sufficiently large that, by <a href="Garding's Inequality.html">Garding's Inequality</a>, the operator $L_\mu = (L + \mu \mathsf{Id})$ is invertible. We see that unique solvability holds whenever $u=0$ is the only solution of $u = L_\mu^{-1} (\lambda + \mu) u$.
+</li>
+<li>Moreover, we know from the proof of the Fredholm theorem that $L_\mu^{-1}$ is a bounded, linear, compact operator. So we conclude that unique solvability holds whenever $(\lambda + \mu)^{-1}$ is not an eigenvalue of $L_{\mu}^{-1}$.  There is an at most countable set of such values and their only limit point is zero (corresponding to $\lambda \to \infty$). <span class="qed" />
+</li>
+</ol>
+<p>
+The boundary value problem in the previous theorem is closely related to the resolvent $R_{-\lambda} = (L - \lambda \mathsf{Id})^{-1}$, since a weak solution $u$ has $R_{-\lambda} f = u$. It is easy to show that if $\lambda$ is not an eigenvalue, then $R_{-\lambda}$ is bounded.
+</p>
+<hr />
+<p>
+<strong>Boundedness of resolvent</strong>. If $\lambda \not \in \Sigma$, then there exists a constant $C$ such that $$ \|u\|_{\Lcl^2(\Omega)} \leq C \|f\|_{\Lcl^2(\Omega)}$$ whenever $u \in H^1_0(\Omega)$ (weakly) solves the spectral BVP. The constant depends only on $\lambda, \Omega, L$, and it is expected to blow up as $\lambda$ approaches an eigenvalue.
+</p>
+<hr />
+<p>
+One way to see the constant must blow up is that if $\lambda$ equals an eigenvalue, then we may choose $f = 0$ and the bound is impossible.
+</p>
+<p>
+<em>Proof sketch</em>. if the theorem were not true, then we could construct sequences $\{u_k\}_{k\geq 1}, \{f_k\}_{k \geq 1}$ with the properties that, for $k \geq 1$:
+$$\|u_k\|_{\Lcl^2(\Omega)} = 1 \qquad \|f_k\|_{\Lcl^2(\Omega)} \leq k^{-1} \qquad R_{-\lambda} f_k = u_k$$
+Clearly, $f_k \to 0$, and we may let $u_\infty$ be the limit of a convergent subsequence of the $\{u_k\}_{k \geq 1}$. Since $R_{-\lambda}$ is a bounded, compact, linear operator it must be that $R_{-\lambda} u = 0$, which contradicts the fact that $\lambda$ is not an eigenvalue.
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

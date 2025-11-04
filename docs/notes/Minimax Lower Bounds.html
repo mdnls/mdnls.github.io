@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Minimax Lower Bounds</h1>
+<p>
+<strong>Setup</strong>: Let $\Pcl$ be a space of probability measures over the space $\Xcl$, let $\theta : \Pcl \to \Omega$ be a functional on this space, let $\rho : \Omega \times \Omega \to \R_+$ be a pseudometric, and let $\Phi : \R_+ \to \R_+$ be an increasing function. These objects can be interpreted as:
+</p>
+<ul>
+<li>$\Pcl$ represents a set of 'candidate distributions,' which should contain the data generating distribution.
+</li>
+<li>$\theta$ is a parameter that can be estimated from $p \in \Pcl$. For example, it may be the mean of $p$, variance functional, of $p$, or the pointwise evaluation (if $p$ has a density).
+</li>
+<li>$\rho$ is a performance metric that measures the error $\rho(\hat{\theta}, \theta^*)$ incurred by an estimate $\hat{\theta}$ of the parameter $\theta^*$.
+</li>
+<li>$\Phi$ is a rescaling function for the loss. For example, in minimum squared error estimation problems, it is common to minimize $\rho(\theta, \hat{\theta})^2$ in place of $\rho(\theta, \hat{\theta})$, which is accommodated by the choice $\Phi(t) = t^2$.
+</li>
+</ul>
+<hr />
+<p>
+<strong>Definition (Minimax Error)</strong>. in the above setting, the minimax error of estimation is the quantity
+$$
+\Mcl(\theta(\Pcl); \Phi \circ \rho) = \inf_{\hat{\theta} : \Pcl \to \Omega} \sup_{P \in \Pcl} \E_{X \sim P}[\Phi(\rho(\hat{\theta}(X), \theta(P)))]
+$$
+</p>
+<hr />
+<p>
+It is often tractable to lower bound $\Mcl(\theta(\Pcl); \Phi \circ \rho)$ by the <em>Bayes Error</em> associated with a $\delta$-packing of $\Pcl$. If there is an estimator $\hat{\theta}$ that can estimate the true parameter $\theta^*(p)$ <em>uniformly well</em> over $p \in \Pcl$, up to error $\rho(\hat{\theta}, \theta^*)<\delta$, then it could be used in an $m$-ary hypothesis test to distinguish between $\delta$-separated elements in $\Pcl$. In this way, we can reduce the functional estimation problem to that of hypothesis testing, and then invoke lower bounds like <a href="Le Cam's Bound.html">Le Cam's Bound</a>. The $\delta$-packing represents the hardest possible hypothesis test because there are as many options as possible.
+</p>
+<hr />
+<p>
+<strong>Proposition (Reduction to Bayes Error)</strong>. Let $\bar{P} = \{p_1, \ldots, p_m\} \subseteq \Pcl$ be $2 \delta$-separated, ie. $\rho(\theta(p_i), \theta(p_j)) \geq 2\delta$ for all $i \not = j$. Let $\pi$ be a prior over $i = 1 \ldots m$ and let $Q$ be the joint distribution over $(X, i)$ when $i \sim \pi$ and $X \sim p_i$.
+</p>
+<p>
+Then,
+$$
+\Mcl(\theta(\Pcl); \Psi \circ \rho) \geq \Psi(\delta) \cdot \inf_{\psi} Q[\psi(X) \not = i]
+$$
+where the infimum is taken over all functions $\psi : \Xcl \to [m]$.
+</p>
+<hr />
+<p>
+<em>Proof</em>. for any estimator $\hat{\theta}$,
+$$
+\begin{aligned}
+\sup_{p \in \Pcl} \E_{X \sim p}[\Phi(\rho(\hat{\theta}(X), \theta(P))] & \geq
+\E_{i \sim \pi} \E_{p_i}[\Phi(\rho(\hat{\theta}(X), \theta(p_i)))] \\
+& \geq
+\Phi(\delta) \E_{i \sim \pi}\left[ P_{X \sim p_i}\left[ \rho(\hat{\theta}(X), \theta(p_i)) \geq \delta\right] \right] \\
+& \geq \Phi(\delta) \cdot Q\left[ \rho(\hat{\theta}(X), \theta(p_i)) \geq \delta\right]
+\end{aligned}
+$$
+Consider the test statistic $\psi_{\hat{\theta}}(X) = \argmin_{j=1,\ldots, m} d(\hat{\theta}(X), \theta(p_j))$. The event $\{\rho(\hat{\theta}(X), \theta(p_i) < \delta\}$ forces $\psi_{\hat{\theta}}(X) = i$, since the reverse triangle inequality would imply $\rho(\hat{\theta}(X), \theta(p_j)) \geq \rho(\theta(p_i), \theta(p_j)) - \rho(\theta(p_j), \hat{\theta}(x)) \geq \delta$. We therefore have
+$$
+Q\left[\rho(\hat{\theta}(X), \theta(p_i)) \geq \delta\right] \geq \inf_{ \psi} Q\left[ \psi(X) \not = i\right]
+$$
+where the infimum is taken over all tests $\psi : \Xcl \to [m]$. The claim follows by taking the supremum of the right hand side over estimators $\hat{\theta}$. <span class="qed" />
+</p>
+<p>
+As mentioned above, the problem of distinguishing between $p_1, \ldots p_m$ can be thought of as an $m$-ary hypothesis test, but it is <em>different</em> from a <a href="Multiple Testing.html">multiple testing problem</a>, since the testing function $\psi$ must choose a single index $i \in [m]$ rather than a rejection set $S \subset [m]$.
+</p>
+<h2 id="two-point-method">Two-point Method</h2>
+<p>
+Consider the case when $m=2$ and $\pi$ is uniform over $i=\{0, 1\}$. Then,
+$$
+\inf_{\psi} Q[\psi(X)\not = i] = \inf_{\psi} \left\{ \frac{1}{2} P_0(\Psi(X) = 1) + \frac{1}{2} P_1(\Psi(X) = 0) \right\}
+$$
+where $P_i(\cdot)$ is shorthand for $P_{X \sim p_i}(\cdot)$. This is precisely the <a href="Hypothesis Testing.html">equally-weighted testing error</a>, so that by <a href="Le Cam's Bound.html">Le Cam's Bound</a>,
+$$
+\inf_{\psi} Q[\psi(X) \not = i] \geq \frac{1}{2}\left( 1 - \|p_0 - p_1\|_{\mathsf{TV}}\right).
+$$
+We have the following result.
+</p>
+<hr />
+<p>
+<strong>Proposition (two-point minimax lower bound)</strong>. for any $p_0, p_1$ with $\rho(p_0, p_1) \geq 2\delta$,
+$$
+\Mcl(\theta(\Pcl); \Phi \circ \rho) \geq \frac{\Phi(\delta)}{2} \left( 1 - \|p_0 - p_1\|_{\mathsf{TV}}\right)
+$$
+</p>
+<hr />
+<h2 id="fanos-method">Fano's Method</h2>
+<p>
+In the case when $\pi$ is uniform over $i = \{1 \ldots, m\}$, then in place of Le Cam's bound used above, we can lower bound $Q[\psi(X) \not = i]$ using simple entropy calculations.
+</p>
+<hr />
+<p>
+<strong>Proposition (Fano minimax lower bound)</strong>. if $\pi$ is uniform over $i \in \{1, \ldots, m\}$ then in the setting of the previous statements,
+$$
+\inf_{\psi} Q[\psi(X) \not = i] \geq 1 - \frac{I(i; X) + \ln(2)}{\ln(m)}
+$$
+where $I(i; X) = \E_Q[\ln(Q(i, X)) - \ln(Q_X(X)) - \ln(m)]$ is the mutual information.
+</p>
+<p>
+As a consequence, for any set $\bar{P} = \{p_1, \ldots, p_m\}$ that is $2\delta$-separated with respect to $\rho$, whenever we have
+$$
+\frac{I(i; X) + \ln(2)}{\ln(m)} \leq \frac{1}{2}
+$$
+it implies
+$$
+\Mcl(\theta(\Pcl); \Phi\circ \rho)  \geq \frac{1}{2} \Phi(\delta).
+$$
+</p>
+<hr />
+<p>
+<em>Proof</em>. Write the event $E = 1\{\psi(X) \not = i\}$ and consider the random triplet $(E, i, X)$ under the distribution $Q$. On one hand,
+$$
+\begin{aligned}
+H(E, i, X) & = H(E) + H(E \mid X) + H(i \mid E, X) \\
+& \leq H(E) + \ln(2) + \underbrace{Q(E=0)H(i \mid E=0, X)}_{0\text{, since }i = \psi(X)} + Q(E=1) \underbrace{H(i \mid E=1, X)}_{\leq \ln(m-1) \text{, since } i \not = \psi(X)} \\
+& \leq H(E) + \ln(2) + Q(E=1) \ln(m-1)
+\end{aligned}
+$$
+on the other hand,
+$$
+\begin{aligned}
+H(E, i, X) & = H(X) + H(i \mid X) + H(E \mid i, X) \\
+& = H(X) + H(i)-I(i;X)
+\end{aligned}
+$$
+because of the fact that $H(E \mid i, X) = 0$ and $H(i \mid X) = H(i) - I(i; X)$. Putting these two together, we have
+$$
+\ln(2) + Q(\psi(X) \not = i) \ln(m-1) \geq H(i) - I(i; X)
+$$
+and the claim follows by rearranging. <span class="qed" />
+</p>
+<h3 id="local-kl-packing">Local KL Packing</h3>
+<p>
+The following bound is a simple way to instantiate Fano's method.
+</p>
+<hr />
+<p>
+<strong>Proposition (local KL packing)</strong> suppose $\pi$ is uniform, $\bar{P}$ is $2 \delta$-separated, and $\KL(p_i \mid p_j) \leq C$ for all pairs in $\bar{P}$.
+By convexity of KL,
+$$I(i; X) \leq \frac{1}{m^2} \sum_{i, j = 1}^m \KL(p_i \mid p_j) \leq a. $$
+</p>
+<hr />
+<p>
+This bound is typically used in situations where $\Pcl$ contains product distributions over $n$ coordinates, in which case we expect $\KL(p_i \mid p_j) = O(n)$. It is often also the case that these distributions satisfy a <a href="Transportation Inequalities.html">transportation-like inequality</a> such as <a class="broken" href="#">Pinsker's Inequality</a>, which states that
+$$
+2 \|p_i - p_j\|_{\mathsf{TV}}^2 \leq \KL(p_i \mid p_j).
+$$
+so that if $\rho(p_0, p_1) \approx \|p_0 - p_1\|_{\mathsf{TV}}$, the constant will scale like $C \sim n \delta^2$. Proving the minimax lower bound amounts to checking whether there exists a $2\delta$-separated set $\bar{P}$ for which
+$$
+\ln(\bar{P}) \geq 2 n \delta^2 + \ln(2).
+$$
+This inequality bears a striking resemblance to the definition of the <a href="Fixed-point localization method for non-parametric regression rates.html">critical localization radius</a> used to prove convergence rates for empirical risk minimization problems. As a point of comparison, consider the setting of <a href="Fixed-point localization method for non-parametric regression rates.html">non-parametric least-squares regression</a> with $n=1$ over functions $f \in \Fcl$. The fixed design estimation error can be bound by $\E[\|\hat{f}-f^*\|_n^2] \leq (\delta_{\mathsf{crit}})^2$ where $\delta_{\mathsf{crit}}$ is defined in terms of the <a href="Fixed-point localization method for non-parametric regression rates.html#theorems-and-examples">localized gaussian width</a> of $\Gcl(\delta, \Fcl)$.
+</p>
+<p>
+In that case, $\delta_{\mathsf{crit}}$ is the smallest $\delta > 0$ satisfying the first inequality of
+$$
+\delta^2 \geq \Gcl(\delta, \Fcl) \geq \int_{\delta^2/4}^\delta \sqrt{\ln \Ncl(\Fcl^*_\delta, \|\cdot \|_n, \eps)}\, d \eps.
+$$
+whereas, if we take $\Phi(\delta) = \delta^2$ in minimax bound, we get require
+$$
+\ln\left(\frac{1}{2}\Ncl(\Pcl, \rho \circ \theta, \delta)\right) \gtrsim \delta^2 \iff \ln(\bar{P}) \geq 2 \delta^2 + \ln(2).
+$$
+</p>
+<h3 id="yang-barron-method">Yang-Barron method</h3>
+<p>
+Another method for bounding the KL, which is often more convenient than KL packing, uses the following bound.
+</p>
+<hr />
+<p>
+<strong>Proposition (Yang-Barron bound)</strong>. For $i, X \sim Q$, the mutual information is upper bound by covering in the 'metric' $p, q \mapsto \sqrt{KL}(p \mid q)$:
+$$
+I(i; X) \leq \inf_{\eps \geq 0} \left\{ \eps^2 + \log \Ncl(\Pcl, \sqrt{\KL}, \eps) \right\}
+$$
+</p>
+<hr />
+<p>
+<em>Proof</em>. in this case, mutual information satisfies a 'chain rule,'
+$$
+I(i; X) = \E_{i, X \sim Q} \left[ \log \left(\frac{ \pi(i)p_i(X)}{\pi(i)q_X(X) }\right)\right] = \E_{i \sim \pi} [\KL(p_i \mid q_X)]
+$$
+and in fact it turns out that $q_X = \E_{i \sim \pi}[p_i]$ is the minimizer of the 'barycenter functional'
+$$
+q \mapsto \E_{i \sim \pi}[\KL(p_i \mid q)].
+$$
+Let $q_1, \ldots, q_N$ be a minimal $\eps$-covering in $\sqrt{\KL}$, or in other words, a minimal set for which
+$$
+\min_{j = 1 \ldots N} \KL(p, q_j) \leq \eps^2 \qquad \text{for any }p \in \Pcl.
+$$
+For each $p \in \Pcl$, let $\pi(p)$ be the index attaining the minimum in the previous line. Then we may take $\bar{q} = \frac{1}{N}\sum_{j=1}^N q_j$ which leads to
+$$
+\KL(p_i \mid \bar{q}) = \E_{p_i}\left[\log \frac{p_i(X)}{\frac{1}{N} \sum_{j=1}^N q_j(X)}\right] \leq \E_{p_i} \left[ \log \frac{p_i(X)}{q_{\pi(p_i)}(X)}\right] + \log N \leq \eps^2 + \log N
+$$
+and so the claim follows. <span class="qed" />
+</p>
+<p>
+In order to use this bound in practice, it is typical to take a two step approach:
+</p>
+<ol>
+<li>Compute $\eps > 0$ for which $\eps^2 \geq \log \Ncl(\Pcl, \sqrt{\KL}, \eps)$. (As in the previous sections, this bears many similarities to proving localized upper bounds!)
+</li>
+<li>Next, choose the largest $\delta > 0$ for which there exists a $2\delta$-separated set (with respect to $\rho$) of size $m$ such that $\log(m) \geq 2( 2 \eps^2 + \log 2)$.
+</li>
+</ol>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

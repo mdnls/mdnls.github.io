@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Global Sensitivity Analysis</h1>
+<p>
+Consider a random variable of the form $Y = f(X_1, X_2, \ldots, X_d)$. The goal of Global Sensitivity Analysis is to 'attribute' $\Var(Y)$ to randomness in each of the $(X_i)_{i \in [d]}$.  By the <a href="Tower Law of Variance.html">Tower Law of Variance</a>,
+$$
+\Var(Y)  = \underbrace{\Var_{x_i} (\E_{x_{-i}}[Y \mid X_i = x_i])}_{(1)} \ + \ \underbrace{\E_{x_i}[\Var_{x_{-i}}(Y \mid X_i = x_i)]}_{(2)}
+$$
+The term $(1)$ is the <em>variance explained by $x_i$</em> and the term $(2)$ is the <em>unexplained variance</em>.
+</p>
+<p>
+<strong>Univariate Sensitivity Indices</strong>: based on the above formula, we may define the quantities,
+</p>
+<ul>
+<li><strong>Main Effect Sensitivity</strong>: the variance explained by $X_i$ normalized by $\Var(Y)$. $$
+</li>
+</ul>
+<p>
+S_i = \frac{\Var(\E[Y \mid X_i]) }{\Var(Y)}$$
+</p>
+<ul>
+<li><strong>Total Effect Sensitivity</strong>: the complement of the variance explained by all variables <em>except</em> for $X_i$.  $$
+</li>
+</ul>
+<p>
+S_{T_i} = 1 - \frac{\Var(\E[Y \mid X_{-i}])}{\Var(Y)} = \frac{\E[\Var(Y \mid X_{-i})]}{\Var{(Y)}}
+$$
+<strong>Multivariate Sensitivity Indices</strong>: suppose the $(X_i)_{i \in [d]}$ are mutually independent and that $f$ can be written
+$$
+\begin{aligned}
+f(x_1, \ldots, x_d)& = f_0 + \sum_{i=1}^d f_i(x_i) \\
+& \quad +  \sum_{i=1}^d \sum_{j > i}^df_{ij}(x_i, x_j) \\
+& \quad + \sum_{i=1}^d \sum_{j > i}^d \sum_{k > i}^d f_{ijk}(x_i, x_j, x_k) \\
+& \quad + \ \ldots \\
+& = \sum_{I\in 2^{[d]}}f_I ( (x_i)_{i \in I}).
+\end{aligned}
+$$
+Also, suppose that the $(f_I)_{I \in 2^{[d]}}$ satisfy the following <em>identifiability condition</em>: for all nonempty $I \subseteq [d]$, for each $i \in I$,
+$$ \E_{x_i} [f_I((x_j)_{j \in I} ) \mid (x_j)_{j \not = i} ]  = \int f_I((x_j)_{j \in I})\ p_i(x_i) \, d{x_i} = 0 $$
+</p>
+<p>
+This representation is called a <strong>High-dimensional Model Representation</strong> (HDMR) and, under these assumptions, it satisfies:
+</p>
+<ol>
+<li>Independence: the functions $f_{I}$ are mean zero and uncorrelated.
+</li>
+<li>Hierarchical approximation:
+</li>
+</ol>
+<p>
+Remarks:
+</p>
+<ul>
+<li><strong>Multivariate decomposition of variance</strong>: by the independence property, we can write
+</li>
+</ul>
+<p>
+$$ \begin{aligned} \Var(Y) & = \Var\left( f_0 + \sum_{i=1}^d f_i(X_i) + \sum_{j > i}^d f_{ij} (X_i, X_j) + \ldots \right) \\
+& = \sum_{i=1}^d \Var(f_i) + \sum_{j > i}^d \Var(f_{ij}) + \ldots
+\end{aligned}$$which leads to a decomposition of the variance into contributions from interaction terms of every possible order. This decomposition is known as the <a href="Global Sensitivity Analysis.html">ANOVA Decomposition</a>. Normalizing by the total variance leads to a multivariate version of the tower law:
+$$ 1 = \sum_{i=1}^d \underbrace{\frac{\Var(f_i)}{\Var(Y)}}_{S_i}+ \sum_{j > i}^d \underbrace{ \frac{\Var(f_{ij})}{\Var(Y)}}_{S_{ij}} + \ldots $$
+with contributions from each of the terms $(S_I)_{I \subseteq [d]}$.
+</p>
+<ul>
+<li><strong>HDMR captures the complexity of interactions between $x_1, \ldots, x_d$</strong>. The hierarchical approximation property can be interpreted as separating out the high order correlations of $f$. If $f$ is low
+</li>
+<li>Main effect of $x_i$ is $S_i$ and total effect of $x_i$ is $\sum_{I \subseteq [d], i \in I} S_{I}$.
+</li>
+</ul>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>

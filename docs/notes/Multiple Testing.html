@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="icon" href="assets/icon.ico" />
+        <meta name="google-site-verification" content="gGsyj98Hmr9mZj0-DQzJIAdOP3eJXZJZnM4_NF8Mai8" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <title>Mara Daniels - MIT</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                ],
+                macros: {
+                    '\\saeq': '\\{#1\\}',
+                    '\\linf': '\\lim_{n \\to \\infty}',
+                    '\\Alpha': '\\mathcal{A}',
+                    '\\norm': '\\left\\lVert#1\\right\\rVert',
+                    '\\ct': 'C^\\infty_c ( #1 )',
+                    '\\lloc': 'L^1_{\\mathsf{loc}}( #1 )',
+                    '\\Scr': '\\mathscr{S}',
+                    '\\tmpr': '\\mathscr{S}',
+                    '\\limnf': '\\liminf \\limits_{#1}',
+                    '\\limsp': '\\limsup \\limits_{#1}',
+                    '\\R': '{\\mathbb R}',
+                    '\\C': '{\\mathbb C}',
+                    '\\N': '{\\mathbb N}',
+                    '\\Q': '{\\mathbb Q}',
+                    '\\H': '{\\mathbb H}',
+                    '\\S': '{\\mathbb S}',
+                    '\\Z': '{\\mathbb Z}',
+                    '\\E': '{\\mathbb E}',
+                    '\\Var': '\\mathsf{Var}',
+                    '\\Cov': '\\mathsf{Cov}',
+                    '\\KL': '\\mathsf{KL}',
+                    '\\Ent': '\\mathsf{Ent}',
+                    '\\F': '{\\mathbb F}',
+                    '\\Acl': '\\mathcal{A}',
+                    '\\Bcl': '\\mathcal{B}',
+                    '\\Ccl': '\\mathcal{C}',
+                    '\\Dcl': '\\mathcal{D}',
+                    '\\Ecl': '\\mathcal{E}',
+                    '\\Fcl': '\\mathcal{F}',
+                    '\\Gcl': '\\mathcal{G}',
+                    '\\Hcl': '\\mathcal{H}',
+                    '\\Jcl': '\\mathcal{J}',
+                    '\\Kcl': '\\mathcal{K}',
+                    '\\Lcl': '\\mathcal{L}',
+                    '\\Mcl': '\\mathcal{M}',
+                    '\\Ncl': '\\mathcal{N}',
+                    '\\Ocl': '\\mathcal{O}',
+                    '\\Pcl': '\\mathcal{P}',
+                    '\\Qcl': '\\mathcal{Q}',
+                    '\\Rcl': '\\mathcal{R}',
+                    '\\Scl': '\\mathcal{S}',
+                    '\\Tcl': '\\mathcal{T}',
+                    '\\Ucl': '\\mathcal{U}',
+                    '\\Vcl': '\\mathcal{V}',
+                    '\\Wcl': '\\mathcal{W}',
+                    '\\Xcl': '\\mathcal{X}',
+                    '\\Ycl': '\\mathcal{Y}',
+                    '\\Zcl': '\\mathcal{Z}',
+                    '\\diag': '\\mathrm{diag}',
+                    '\\supp': '\\mathrm{supp}',
+                    '\\diam': '\\mathrm{diam}',
+                    '\\sgn': '\\mathrm{sgn}',
+                    '\\im': '\\mathrm{Im}',
+                    '\\lcm': '\\mathrm{lcm}',
+                    '\\aut': '\\mathrm{Aut}',
+                    '\\inn': '\\mathrm{Inn}',
+                    '\\rg': '\\mathrm{rg}',
+                    '\\vol': '\\mathrm{vol}',
+                    '\\Pr': '\\mathrm{Pr}',
+                    '\\Tr': '\\mathrm{Tr}',
+                    '\\eps': '\\varepsilon',
+                    '\\charfct': '\\mathds{1}',
+                    '\\nullfct': '{\\bf 0}',
+                    '\\as': '\\text{a.s.}\\xspace',
+                    '\\argmax': '\\mathop{\\mathrm{arg\\,max}}',
+                    '\\argmin': '\\mathop{\\mathrm{arg\\,min}}',
+                    '\\esssup': '\\mathop{\\mathrm{ess\\,sup}}',
+                    '\\th': '\\hat{\\theta}',
+                    '\\pto': '\\stackrel{p}{\\longrightarrow}',
+                    '\\dto': '\\stackrel{d}{\\longrightarrow}',
+                    '\\asto': '\\stackrel{a.s.}{\\longrightarrow}',
+                    '\\coloneqq': ':='
+                }
+            });">
+            </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-12 col-xl-8 offset-xl-2"> 
+            <h1>Multiple Testing</h1>
+<p>
+<strong>Description</strong>: multiple testing is a generalization of <a href="Hypothesis Testing.html#simple-hypothesis-testing">simple testing</a> where there can be multiple null hypotheses. For example, in the <a href="Multiple Testing Gaussian Sequence Model.html">Multiple Testing Gaussian Sequence Model</a>, we consider a sequence of observations $Y_i \sim \Ncl(\mu_i, 1)$, and we test the set of hypotheses:
+$$
+H_{0, i} : \mu_i = 0 \qquad H_{1, i} : \mu_i \not = 0.
+$$
+for $i = 1 \ldots n$. The goal is to perform multiple simultaneous hypothesis tests, and to control for situations such as dependencies between the tests.
+</p>
+<p>
+<strong>Performance Metrics</strong>:
+</p>
+<ul>
+<li><a href="Multiple Testing.html">Family Wise Error Rate</a>: let $I \subseteq [n]$ and call $H_I$ the situation where $H_{0, i}$ holds for $i \in I$, and that $H_{1, i}$ holds for $i \not \in I$. The FWER is $P_{H_I}(\text{at least one } \{ H_{0, i} : i \in I\} \text{ is rejected})$. We say that a test 'controls the FWER at level $\alpha$' if this probability is bounded by $\alpha$ for all $I \subseteq n$.
+</li>
+<li><a href="Multiple Testing.html">Weak FWER</a>: a test is said to 'weakly control FWER' if it satisfies the previous definition when $I = [n]$.
+</li>
+<li><a href="Multiple Testing.html">False Discovery Rate</a>: a test controls FDR at rate $\alpha$ if, for all $I \subseteq [n]$,
+</li>
+</ul>
+<p>
+$$
+\E_{H_I}\left[\frac{\#\{i \in I : H_{0, i} \text{ is rejected}\}}{\#\{ i \in [n] : H_{0, i} \text{ is rejected}\}}\right] \leq \alpha.
+$$
+The idea of this metric is that, given an output rejection set $R \subseteq [n]$, the fraction of indices in $R$ that were actually null (the false discoveries) is bounded by $\alpha$.
+</p>
+<p>
+Note that, when $I = [n]$, quantity inside the expectation becomes $\{0, 1\}$-valued and in fact it coincides with the Weak FWER.
+</p>
+<p>
+<strong>Remarks</strong>:
+</p>
+<ul>
+<li>In <a href="Hypothesis Testing.html#simple-hypothesis-testing">simple testing</a> and <a href="Hypothesis Testing.html#composite-hypothesis-testing">composite testing</a>, we analyze tests like the <a href="Likelihood Ratio Test.html">Generalized Likelihood Ratio Test</a> which are tailored to specific null and alternative distributions (ie. by using their log-likelihood functions). Instead, multiple testing abstracts away the specific form of each hypothesis, typically via an assumption like having access to a <a href="Super-uniform p-value.html">Super-uniform p-value</a>. This way, we can focus on designing rejection procedures, which take p-values as input and which give rejection sets as output.
+</li>
+</ul>
+<h3 id="related-pages">Related Pages</h3>
+<p>
+```query
+tag:#research/multiple-testing
+```
+</p>
+            </div>
+        </div>
+        <div class="row">
+        <p style="text-align: right; width:100%"><i><a href="../miscellany.html">Back...</a></i></p>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+</html>
