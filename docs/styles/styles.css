@@ -52,7 +52,7 @@ em {
 }
 
 .feat {
-  text-decoration: underline;
+  font-style: italic;
 }
 
 .pagenav-link {
