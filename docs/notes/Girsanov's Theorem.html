@@ -153,62 +153,62 @@ Now we can state Girsanov's theorem.
 </p>
 <hr />
 <p>
-<strong>Theorem (Girsanov)</strong>. Suppose that $(\Fcl_t)_{t \geq 0}$ is complete and right-continuous and let $P, Q$ be mutually a.c. measures on $\Fcl_\infty$. Let $(D_t)_{t \geq 0}$ be be the cádlág martingale such that, for $t \geq 0$,
+**Theorem (Girsanov)**. Suppose that $(\Fcl_t)_{t \geq 0}$ is complete and right-continuous and let $P, Q$ be mutually a.c. measures on $\Fcl_\infty$. Let $(D_t)_{t \geq 0}$ be be the cádlág martingale such that, for $t \geq 0$,
 $$
-D_t(\omega) = \frac{dQ}{dP}\bigg|_{\Fcl_t}(\omega).
+D<em>t(\omega) = \frac{dQ}{dP}\bigg|</em>{\Fcl_t}(\omega).
 $$
 Assume that $(D_t)_{t \geq 0}$ has <em>continuous</em> sample paths, and let $L$ be the unique continuous local martingale such that $D_t = \Ecl(L)_t$, or equivalently,
 $$
-L_t = \log D_0 + \int_0^t \frac{d D_s}{D_s}.
+L<em>t = \log D</em>0 + \int<em>0^t \frac{d D</em>s}{D_s}.
 $$
 Then, if $M$ is a continuous local martingale under $P$, the process $\tilde{M} = M - \langle M, L \rangle$ is a continuous local martingale under $Q$.
 </p>
 <hr />
 <p>
-<em>Proof</em>. the fact that there exists a martingale $L$ such that $D_t = \Ecl(L)_t$ is proven <a href="Exponential Martingale.html">here</a>. The key idea of the theorem is the observation that, if there $P$-martingale of the form $(M_t D_t)_{t \geq 0}$, then the process $(M_t)_{t \geq 0}$ must be a $Q$-martingale, since for any $A \in \Fcl_s$ and $t > s$,
+<em>Proof</em>. the fact that there exists a martingale $L$ such that $D_t = \Ecl(L)_t$ is proven [[Exponential Martingale|here]]. The key idea of the theorem is the observation that, if there $P$-martingale of the form $(M_t D_t)_{t \geq 0}$, then the process $(M_t)_{t \geq 0}$ must be a $Q$-martingale, since for any $A \in \Fcl_s$ and $t > s$,
 $$
-\E_P[1_A M_t D_t ] = \E_Q[1_A M_t ] = \E_Q[1_A M_s] = \E_P[1_A M_s D_s].
+\E<em>P[1</em>A M<em>t D</em>t ] = \E<em>Q[1</em>A M<em>t ] = \E</em>Q[1<em>A M</em>s] = \E<em>P[1</em>A M<em>s D</em>s].
 $$
 Integrating with Itô's formula yields
 $$
-M_t D_t = M_0 D_0 + \int_0^t M_s \, d D_s + \int_0^t D_s \, d M_s + \langle M, D \rangle_t.
+M<em>t D</em>t = M<em>0 D</em>0 + \int<em>0^t M</em>s \, d D<em>s + \int</em>0^t D<em>s \, d M</em>s + \langle M, D \rangle_t.
 $$
 It turns out that we can 'adjust' $M$ to eliminate the finite variation part of the right hand side. Observe that
 $$
-\langle M, D \rangle_t = \langle M, \Ecl(L)\rangle_t = \int_0^t \Ecl(L)_s \, d \langle M , L \rangle_s = \int_0^t D_s\,  d \langle M, L \rangle_s
+\langle M, D \rangle<em>t = \langle M, \Ecl(L)\rangle</em>t = \int<em>0^t \Ecl(L)</em>s \, d \langle M , L \rangle<em>s = \int</em>0^t D<em>s\,  d \langle M, L \rangle</em>s
 $$
 so that
 $$
-M_t D_t = M_0 D_0 + \int_0^t M_s \, d D_s + \int_0^t D_s \, d [ M + \langle M, L \rangle]_s
+M<em>t D</em>t = M<em>0 D</em>0 + \int<em>0^t M</em>s \, d D<em>s + \int</em>0^t D<em>s \, d [ M + \langle M, L \rangle]</em>s
 $$
 and, as a consequence, replacing $M_t$ by $\tilde{M}_t = M_t - \langle M, L \rangle_t$ yields
 $$
-\begin{aligned}
-\tilde{M}_t D_t& = \tilde{M}_0 D_t + \int_0^t \tilde{M}_s \, d D_s + \int_0^t D_s \, d M_s - \langle \langle M, L \rangle, L \rangle_t\\
-& = \tilde{M}_0 D_t + \int_0^t \tilde{M}_s \, d D_s + \int_0^t D_s \, d M_s
-\end{aligned}
+\begin{align*}
+\tilde{M}<em>t D</em>t& = \tilde{M}<em>0 D</em>t + \int<em>0^t \tilde{M}</em>s \, d D<em>s + \int</em>0^t D<em>s \, d M</em>s - \langle \langle M, L \rangle, L \rangle_t\\
+& = \tilde{M}<em>0 D</em>t + \int<em>0^t \tilde{M}</em>s \, d D<em>s + \int</em>0^t D<em>s \, d M</em>s
+\end{align*}
 $$
 since the bracket of a finite variation process is zero.
 </p>
 <p>
 It remains to prove that the above reasoning still holds when $M$ is a continuous local martingale instead of a true martingale. As above, let $A \in \Fcl_s$ and $t > s$. Let $T$ be a stopping time of $P$ and suppose $(XD)^T$ is a $P$-martingale. Then,
 $$
-\E_Q[X^T_t 1_A] = \E_Q[X^T_t \, 1_{A \cap \{T \leq s\}}] + \E_Q[X^T_t \,1_{A \cap \{T > s\}}]
+\E<em>Q[X^T</em>t 1<em>A] = \E</em>Q[X^T<em>t \, 1</em>{A \cap \{T \leq s\}}] + \E<em>Q[X^T</em>t \,1_{A \cap \{T > s\}}]
 $$
 and we have
 $$
-\begin{aligned}
-\E_Q[X^T_t\,  1_{A \cap \{T \leq s\}}] & = \E_P [ 1_{A \cap \{T \leq s\}} \, \E_P[X^T_t D_t\mid \Fcl_s] ] = \E_P[ 1_{A \cap \{T \leq s\}}\, X^T_s D_s] = \E_Q[X^T_s  \, 1_{A \cap \{T \leq s\}}]
-\end{aligned}
+\begin{align*}
+\E<em>Q[X^T</em>t\,  1<em>{A \cap \{T \leq s\}}] & = \E</em>P [ 1<em>{A \cap \{T \leq s\}} \, \E</em>P[X^T<em>t D</em>t\mid \Fcl<em>s] ] = \E</em>P[ 1<em>{A \cap \{T \leq s\}}\, X^T</em>s D<em>s] = \E</em>Q[X^T<em>s  \, 1</em>{A \cap \{T \leq s\}}]
+\end{align*}
 $$
 whereas, since $A \cap \{T > s \} \in \Fcl_T$, we have by optional stopping that
 $$
-\begin{aligned}
-\E_Q[X^T_t \, 1_{A \cap \{T > s\}}]  = \E_P[X_t^T D_t \, 1_{A \cap \{T > s\}}] &= \E_P[X_t^T \,  1_{A \cap \{T > s\}} \, \E[D_t \mid \Fcl_{T \land t}] ]  \\
-& = \E_P[(XD)^T_t\,  1_{A \cap \{T > s\}}] \\
-& = \E_P[(XD)^T_s \, 1_{A \cap \{T > s\}}]] \\
-& = \E_Q[X^T_s \, 1_{A \cap \{T > s\}}].
-\end{aligned}
+\begin{align*}
+\E<em>Q[X^T</em>t \, 1<em>{A \cap \{T > s\}}]  = \E</em>P[X<em>t^T D</em>t \, 1<em>{A \cap \{T > s\}}] &= \E</em>P[X<em>t^T \,  1</em>{A \cap \{T > s\}} \, \E[D<em>t \mid \Fcl</em>{T \land t}] ]  \\
+& = \E<em>P[(XD)^T</em>t\,  1_{A \cap \{T > s\}}] \\
+& = \E<em>P[(XD)^T</em>s \, 1_{A \cap \{T > s\}}]] \\
+& = \E<em>Q[X^T</em>s \, 1_{A \cap \{T > s\}}].
+\end{align*}
 $$
 and so the claim follows. <span class="qed" />
 </p>
@@ -216,18 +216,7 @@ and so the claim follows. <span class="qed" />
 <p>
 It is common to apply Girsanov's theorem in situations where $L$, rather than $Q$, is given. The goal is then to verify that $\Ecl(L)$ is a u.i. martingale, that $\E[\Ecl(L)_0] = \E[\Ecl(L)_\infty] = 1$, and hence that the measure
 $$
-Q(A) \coloneqq \int_A \Ecl(L)_\infty(\omega) \,  d P(\omega)
-$$
-is well defined. There are some criteria (such as Kazami's Criterion and Novikov's Criterion) where this is the case.
-</p>
-<p>
-<del>
-TODO:
-first, finish a note on kazami and novikov
-then, add something about the cameron martin space
-then: MB and FS
-tomorrow: math stast
-</del>
+Q(A) \coloneqq \int<em>A \Ecl(L)</em>\infty(\omega) \,  d P(\omega)
 </p>
             </div>
         </div>

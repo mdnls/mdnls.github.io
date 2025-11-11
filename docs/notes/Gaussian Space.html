@@ -144,16 +144,11 @@ This idea can be generalized to multiple dimensions!
 </li>
 </ul>
 <p>
-\begin{aligned}
-\E[X \mid Y = y] & = \mu_x + \Sigma_{XY}\Sigma_{Y}^{-1} (y - \mu_Y) \\
-\Cov[X \mid Y = y] & = \Sigma_X - \Sigma_{XY} \Sigma_Y^{-1} \Sigma_{XY}.
-\end{aligned}
-$$
+\begin{align*}
+\E[X \mid Y = y] & = \mu<em>x + \Sigma</em>{XY}\Sigma<em>{Y}^{-1} (y - \mu</em>Y) \\
+\Cov[X \mid Y = y] & = \Sigma<em>X - \Sigma</em>{XY} \Sigma<em>Y^{-1} \Sigma</em>{XY}.
+\end{align*}
 </p>
-<ul>
-<li>Let $K \subseteq \Hcl$ be an arbitrary closed linear subspace of a Gaussian space (centered for simplicity) . Let $p_K(X) = \inf_{Y \in K} \|X - Y\|_{\Hcl}^2$ and, for $\omega \in \Omega$, let $p_K(X)(\omega)$ be the value of $Y(\omega)$ for the random variable $Y \in K$ that attains the infimum. Then $X \mid \sigma(K)$ is Gaussian with mean $p_K(X)(\omega)$ and covariance equal to that of $X - p_K(X)$.
-</li>
-</ul>
             </div>
         </div>
         <div class="row">

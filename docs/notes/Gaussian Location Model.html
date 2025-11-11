@@ -133,7 +133,7 @@ First, in the unconstrained case ($\Theta = \R^d$), the <a href="Hypothesis Test
 </p>
 <p>
 Second, in the general case, we have the lower bound
-$$\Ecl_{\mathsf{mm}}(P_0, \Pcl_\eps, \Psi) \geq \frac{1}{2}\left( 1 - \sqrt{\E_{\theta, \theta' \sim \pi} \exp ( \langle \theta, \theta' \rangle ) - 1 }\right)
+$$\Ecl<em>{\mathsf{mm}}(P</em>0, \Pcl<em>\eps, \Psi) \geq \frac{1}{2}\left( 1 - \sqrt{\E</em>{\theta, \theta' \sim \pi} \exp ( \langle \theta, \theta' \rangle ) - 1 }\right)
 $$
 where $\Pcl_\eps = \{\Ncl(\theta, \sigma^2 I_d) : \theta \in \Theta \setminus B_\eps (0)\}$ and $\pi$ is a prior over $\Theta$ that is supported on $\Theta \setminus B_\eps(0)$.
 </p>
@@ -147,27 +147,27 @@ where $\Pcl_\eps = \{\Ncl(\theta, \sigma^2 I_d) : \theta \in \Theta \setminus B_
 </ol>
 <p>
 $$
-\begin{aligned}
-\Ecl_{\mathsf{mm}}(P_0, \Pcl_\eps, \Psi) & = \sup_{P_\theta \in \Pcl_\eps} \Ecl_{1/2}(P_0, P_\theta, \Psi)  \geq \E_{\theta \sim \pi}\left[ \Ecl_{1/2}(P_0, P_\theta, \Psi)\right].
-\end{aligned}
+\begin{align*}
+\Ecl<em>{\mathsf{mm}}(P</em>0, \Pcl<em>\eps, \Psi) & = \sup</em>{P<em>\theta \in \Pcl</em>\eps} \Ecl<em>{1/2}(P</em>0, P<em>\theta, \Psi)  \geq \E</em>{\theta \sim \pi}\left[ \Ecl<em>{1/2}(P</em>0, P_\theta, \Psi)\right].
+\end{align*}
 $$
 </p>
 <ol>
-<li>By <a href="Le Cam's Bound.html">Le Cam's Bound</a>,
+<li>By [[Le Cam's Bound]],
 </li>
 </ol>
 <p>
 $$
-\E_{\theta \sim \pi}[\Ecl_{1/2}(P_0, P_\theta, \Psi)] \geq \frac{1}{2}\left( 1 - \E_{\theta \sim \pi}[\|P_0 - P_\theta\|_{\mathsf{TV}}]\right)
+\E<em>{\theta \sim \pi}[\Ecl</em>{1/2}(P<em>0, P</em>\theta, \Psi)] \geq \frac{1}{2}\left( 1 - \E<em>{\theta \sim \pi}[\|P</em>0 - P<em>\theta\|</em>{\mathsf{TV}}]\right)
 $$
 </p>
 <ol>
-<li>It turns out that $\|P - Q\|_{\mathsf{TV}} \leq \sqrt{\chi^2(P \mid Q)}$ which is useful because the $\chi^2$-divergence between Gaussian mixtures has <a class="broken" href="#">a nice closed form</a>.  For $Q_\pi(x) = \E_{\theta \sim \pi}[P_\theta(x)]$,
+<li>It turns out that $\|P - Q\|_{\mathsf{TV}} \leq \sqrt{\chi^2(P \mid Q)}$ which is useful because the $\chi^2$-divergence between Gaussian mixtures has [[Chi-squared Divergence of Gaussian Mixture|a nice closed form]].  For $Q_\pi(x) = \E_{\theta \sim \pi}[P_\theta(x)]$,
 </li>
 </ol>
 <p>
 $$
-\chi^2(Q_\pi \mid P_0) = \E_{\theta, \theta' \sim \pi}[\exp(\langle \theta' , \theta \rangle)] - 1.
+\chi^2(Q<em>\pi \mid P</em>0) = \E_{\theta, \theta' \sim \pi}[\exp(\langle \theta' , \theta \rangle)] - 1.
 $$
 </p>
 <ol>
@@ -176,7 +176,7 @@ $$
 </ol>
 <p>
 $$
-\log \E_{\theta, \theta'} \exp (\langle \theta', \theta \rangle) = d \log \E_{Z, Z'}\left[ \exp \left(\frac{\eps^2}{d} Z Z'\right) \right] \leq\frac{ \eps^4}{2d}.
+\log \E<em>{\theta, \theta'} \exp (\langle \theta', \theta \rangle) = d \log \E</em>{Z, Z'}\left[ \exp \left(\frac{\eps^2}{d} Z Z'\right) \right] \leq\frac{ \eps^4}{2d}.
 $$
 </p>
 <ol>
@@ -184,15 +184,13 @@ $$
 </li>
 </ol>
 <p>
-<strong>Remark</strong>: at a high level, we are basically deriving a relationship between $\E_{\theta \sim \pi}[\Ecl(P_0, P_\theta, \Psi)]$ and $\chi^2(Q_\theta \mid P_0)$. The closer the two distributions in $\chi^2$, the harder the testing problem, and hence the larger the error.
+**Remark**: at a high level, we are basically deriving a relationship between $\E_{\theta \sim \pi}[\Ecl(P_0, P_\theta, \Psi)]$ and $\chi^2(Q_\theta \mid P_0)$. The closer the two distributions in $\chi^2$, the harder the testing problem, and hence the larger the error.
 </p>
 <h3 id="mean-estimation-for-gaussian-location-model">Mean estimation for Gaussian location model</h3>
 <p>
-Rather than testing whether the mean is zero, we might ask how many samples are required to estimate the true mean. By <a href="Cramer-Rao Lower Bound.html">Cramer-Rao</a>, as $n \to \infty$ we have
+Rather than testing whether the mean is zero, we might ask how many samples are required to estimate the true mean. By [[Cramer-Rao Lower Bound|Cramer-Rao]], as $n \to \infty$ we have
 $$
-\E[\|\hat{\theta}^{\mathsf{MLE}}_n - \theta\|^2_2] \geq \mathsf{Tr}(I(\theta)^{-1}) = \frac{\sigma^2d}{n}
-$$
-<del>Seems like this should actually be d/n^2</del>?
+\E[\|\hat{\theta}^{\mathsf{MLE}}<em>n - \theta\|^2</em>2] \geq \mathsf{Tr}(I(\theta)^{-1}) = \frac{\sigma^2d}{n}
 </p>
             </div>
         </div>

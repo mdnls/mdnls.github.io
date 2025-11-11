@@ -132,46 +132,25 @@ This will also allow us to predict $Y_t \mid Y_{1:t-1} \sim \Ncl(Hx_t^-, H C_t^-
 </li>
 </ol>
 <p>
-X^+_t = X_t^- + G(Y_t - H x_t^-) \qquad C^+_t = C^-_t - G H C_t^- = (I-GH)C^-_t.
+X^+<em>t = X</em>t^- + G(Y<em>t - H x</em>t^-) \qquad C^+<em>t = C^-</em>t - G H C<em>t^- = (I-GH)C^-</em>t.
 $$
-where $G_t = C_t^- H^T ( H C_t^- H^T + R)^{-1}$  is the <em>Kalman Gain</em>. In terms of Gaussian Conditioning, this matrix has the form $\Sigma_{XY} \Sigma_Y^{-1}$.
+where $G_t = C_t^- H^T ( H C_t^- H^T + R)^{-1}$  is the _Kalman Gain_. In terms of Gaussian Conditioning, this matrix has the form $\Sigma_{XY} \Sigma_Y^{-1}$.
 </p>
 <h2 id="ensemble-kalman-filtering">Ensemble Kalman Filtering</h2>
 <p>
 One way to motivate the ensemble Kalman Filter is by viewing the Kalman recursion as a <em>linear transformation applied to Monte-Carlo samples</em>. Specifically, if $X_t, Y_t \mid \Ycl_{1 : t-1} \sim \pi_{X, Y}$ we can write a linear transformation to compute $X_t \mid \Ycl_{1:t}$:
 $$
-Z^i = X^i - G(Y^i - Y^*) \qquad \implies \qquad Z^i \stackrel{(d)}{=} X_t \mid \Ycl_{1:t}.
+Z^i = X^i - G(Y^i - Y^*) \qquad \implies \qquad Z^i \stackrel{(d)}{=} X<em>t \mid \Ycl</em>{1:t}.
 $$
 In this notation, $\Ycl_{1:t}$ is a fixed set of values (such as the past observations), while $Y^i$ is a random variable whose distribution we seek to model.
 </p>
 <p>
 In the Ensemble Kalman Filter, we imagine a potentially nonlinear model
 $$
-\begin{aligned}
-X_t & = M(X_{t-1}) + E_{t-1} \\
-Y_t & = H X_t + e_t
-\end{aligned}
-$$
-where $M : \R^d \to \R^d$ is a potentially nonlinear function. We can use $M$ in a particle-based recursion inspired by the linear filtering problem:
-</p>
-<ol>
-<li>By forecasting, sample $\left\{X_{t-1}^{+, i} \right\}_{i=1}^n \sim \tilde{\pi}_{X_{t-1} \mid \Ycl_{1:t-1}}$, where $\tilde{\pi}$ is a TBD approximation of $\pi_{X_t\ \mid \Ycl_{1:1-t}}$ (see step 3).   These samples are known as the 'forecast ensemble members.'
-</li>
-<li>Step the system forward in time: $X_t^{-, i} = M(X_{t-1}^{+, i}) + E^i_{t-1}$ where $E^i_{t-1} \sim \Ncl(0, Q_{t-1})$.
-</li>
-<li>Next, compute the Bayesian update for $\tilde{\pi}_{X_t \mid \Ycl_{1:t}}$ by generating samples from it in the following way.
-<ul>
-<li>Estimate a covariance $\hat{C}_t^- = \Cov({X_{t-1}^{+}})$ using the empirical covariance of the forecast ensemble members.
-</li>
-<li>Use this covariance to estimate the Kalman gain. $\hat{G}_t = \hat{C}_t^- H^T(H \hat{C}^-_t H^T + R)^{-1}$
-</li>
-<li>Update the forecast ensemble by applying the <em>linear Gaussian update</em> to the $\{X_t^{-, i}\}_{i=1}^n$ even though they are explicitly not generated from a Gaussian model.
-</li>
-</ul>
-</li>
-</ol>
-<p>
-$$ X^{+, i}_t = X^{-, i}_t + \hat{G}_t (Y_t^* - \underbrace{H X^{-, i}_t - e_t^i)}_{\text{sample } Y^i_t \mid X_t^i= X_t^{-, i}}$$
+\begin{align*}
+X<em>t & = M(X</em>{t-1}) + E_{t-1} \\
+Y<em>t & = H X</em>t + e_t
+\end{align*}
 </p>
             </div>
         </div>

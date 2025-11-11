@@ -104,17 +104,15 @@
 <p>
 <strong>Proof</strong>:
 Using Taylor expansion, write
-$$    \begin{aligned}
-\phi(\theta_n) - \phi(\theta) & = \phi'(\theta)(\theta_n - \theta) + \frac{1}{2} \underbrace{\int_0^1 \phi''(\theta + t(\theta_n - \theta)) (\theta_n - \theta)^3 t^2 \, dt}_{I_n}
-\end{aligned}
+$$    \begin{align*}
+\phi(\theta<em>n) - \phi(\theta) & = \phi'(\theta)(\theta</em>n - \theta) + \frac{1}{2} \underbrace{\int<em>0^1 \phi''(\theta + t(\theta</em>n - \theta)) (\theta<em>n - \theta)^3 t^2 \, dt}</em>{I_n}
+\end{align*}
 $$
 Under the assumption that $\sup_{\theta \in \R} |\phi''(\theta)| < R$, $|I_n| \leq R(\theta_n - \theta)^3/6$ so that $\sqrt{n}I_n \to 0$ in probability. By Slutsky's theorem,
 $$
-\begin{aligned}
-\sqrt{n}(\phi(\theta_n) - \phi(\theta)) =  \phi'(\theta)\sqrt{n}(\theta_n - \theta) + \sqrt{n} I_n \stackrel{d}{\longrightarrow} \Ncl(0, \phi'(\theta)^2 \sigma^2).
-\end{aligned}
-$$
-If $\phi'(\theta) = 0$ and if we assume $\partial_\theta^3 \phi(\theta)$ is uniformly bounded then the same argument implies that $n(\phi(\theta_n) - \phi(\theta)$ converges to $\chi^2$ in distribution.
+\begin{align*}
+\sqrt{n}(\phi(\theta<em>n) - \phi(\theta)) =  \phi'(\theta)\sqrt{n}(\theta</em>n - \theta) + \sqrt{n} I_n \stackrel{d}{\longrightarrow} \Ncl(0, \phi'(\theta)^2 \sigma^2).
+\end{align*}
 </p>
             </div>
         </div>

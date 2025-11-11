@@ -123,23 +123,9 @@ From a complete integral, we can construct additional solutions of a PDE.
 </p>
 <hr />
 <p>
-<strong>Definition (Singular Integral a.k.a. envelope)</strong>: for open sets $\Omega \subset \R^n$, $A \subset \R^m$, suppose $u(x, a) : \Omega \times A \to \R$ is $C^1$ function, and that the equation
+**Definition (Singular Integral a.k.a. envelope)**: for open sets $\Omega \subset \R^n$, $A \subset \R^m$, suppose $u(x, a) : \Omega \times A \to \R$ is $C^1$ function, and that the equation
 $$
 D_a u(x, a) = 0 \qquad \text{for each }x \in \Omega
-$$
-may be solved for $a$ as a continuous function $a = \varphi(x)$. Then $v(x) = u(x, \varphi(x))$ is the <em>envelope</em> of $u$. Observe that (by the chain rule) if $u$ solves the PDE $F(\nabla u, u, x)$ then so too does $v$.
-</p>
-<hr />
-<p>
-Now, finally, we can further expand the range of solutions constructed from a complete integral using the <em>general integral</em> construction. <ins>I find this kind of unintuitive, but whatever</em>.
-</p>
-<hr />
-<p>
-<strong>Definition (General Integral)</strong> suppose we can construct $h : A' \to \R$ where $A \subseteq \R^n$ and $A' \subseteq \R^{n-1}$, such that the graph of $h$ is contained in $A$. Write $a = (a', h(a'))$ for $a' \in A'$ and $u'(x, a') = u(x, (a', h(a')))$ and finally $v$ the envelope of $u'$. Then $v$ is called the <em>general integral</em> of $u$.
-</p>
-<hr />
-<p>
-The idea is that, in exchange for one degree of freedom, we can expand the parametrization of $u(x, a)$ so that it depends on $a' \in A'$ and a (potentially nonlinear) function $h : A' \to \R$.
 </p>
             </div>
         </div>

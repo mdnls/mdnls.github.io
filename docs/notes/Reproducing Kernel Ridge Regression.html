@@ -129,28 +129,23 @@ with coefficients $\hat{\alpha} = (\hat{K} + \lambda I_n/n)^{-1} \frac{y}{\sqrt{
 </p>
 <p>
 Consider the subspace $L\subseteq \Hcl$ given by,
-$$ L \coloneqq \mathsf{span}\left( K(\cdot, x_1), \ K(\cdot, x_2), \ \ldots, \ K(\cdot, x_n)\right)
+$$ L \coloneqq \mathsf{span}\left( K(\cdot, x<em>1), \ K(\cdot, x</em>2), \ \ldots, \ K(\cdot, x_n)\right)
 $$
 Let $f^L = \mathsf{Proj}_L (f)$ and $f^\perp = f - f^L$. The fact that $f^\perp$ is orthogonal to $L$ is equivalent to,
 $$
-f^\perp(x_i) = \langle f, K(\cdot, x_i) \rangle = 0
+f^\perp(x<em>i) = \langle f, K(\cdot, x</em>i) \rangle = 0
 $$
 and since $f^\perp$ has no effect on $\sum_{i=1}^n (f(x_i) - f^\perp(x_i) - f^L(x_i))^2$, the minimum solution has $f^\perp = 0$. We can also write
 $$
-f^L(x) = \sum_{i=1}^n \alpha_i K(x, x_i) \implies \sum_{i=1}^n (f^L(x_i) - y_i)^2 = \|K\alpha - y\|_2^2
+f^L(x) = \sum<em>{i=1}^n \alpha</em>i K(x, x<em>i) \implies \sum</em>{i=1}^n (f^L(x<em>i) - y</em>i)^2 = \|K\alpha - y\|_2^2
 $$
 and
 $$
-\|f^L\|_{\Hcl}^2 = \left\langle \sum_{i=1}^n \alpha_i K(\cdot, x_i), \sum_{j=1}^n \alpha_j K(\cdot, x_j)\right \rangle = \sum_{i,j = 1} \alpha_i \alpha_j K(x_i, x_j).
+\|f^L\|<em>{\Hcl}^2 = \left\langle \sum</em>{i=1}^n \alpha<em>i K(\cdot, x</em>i), \sum<em>{j=1}^n \alpha</em>j K(\cdot, x<em>j)\right \rangle = \sum</em>{i,j = 1} \alpha<em>i \alpha</em>j K(x<em>i, x</em>j).
 $$
 so that, overall, the KRR problem is equivalent to
 $$
-\min_{\alpha \in \R^n} \frac{1}{2n} \|y - K\alpha\|_2^2 + \frac{\lambda}{n} a^T K a
-$$
-which is standard ridge regression.
-</p>
-<p>
-<em>Remark</em>: at a high level, the idea behind the 'kernel trick' is that, due to the representer theorem, the pointwise condition $f(x_i) - y_i = 0$ is equivalent to the linear constraint $\langle f(\cdot) - y_i, K(\cdot, x_i) \rangle = 0$, which defines an $n$-dimensional space over which to optimize.
+\min<em>{\alpha \in \R^n} \frac{1}{2n} \|y - K\alpha\|</em>2^2 + \frac{\lambda}{n} a^T K a
 </p>
             </div>
         </div>

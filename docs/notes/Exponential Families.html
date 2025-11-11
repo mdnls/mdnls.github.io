@@ -121,23 +121,9 @@ $$
 \end{aligned}
 $$
 the <a href="Convex Conjugate.html">convex conjugate</a> of $\Phi(\theta)$ is an entropy type quantity $\Psi(\mu)$ given by,
-$$\begin{aligned}
+$$\begin{align*}
 \Psi(\mu) & = \sup_{\theta \in \R^m} \langle \theta, \mu \rangle - \Phi(\theta)
-\end{aligned}
-$$
-By standard properties of the convex conjugate, $\nabla_\mu \Psi(\mu) = \theta^*(\mu)$ where $\theta^*(\mu) = \arg\,\sup_{\theta \in \R^m} \langle \theta, \mu \rangle - \Phi(\theta)$. The first order optimality condition is that $\theta^*(\mu) = \nabla_\theta \Phi(\theta^*) = \E_{\theta^*}[\phi(y)]$. The duality property is,
-</p>
-<p>
->> The partition function $\Phi(\theta)$ is (convex) dual to the entropy $\Psi(\mu)$. There is a canonical pairing $(\theta, \mu) \in \Mcl$ between parameters and moments of statistics, such that each parameter $\theta \in \R^m$ has $(\theta, \nabla_\theta \Phi(\theta)) \in \Mcl$ and each moment $\mu \in \R^m$ has $(\nabla_\mu \Psi(\mu), \mu) \in \Mcl$.
-</p>
-<p>
-These canonical pairings also arise in statistical mechanics in the form of thermodynamical relations. <em>(However, they're usually explainbed in a non-rigorous and confusing way. See: </em> <a href="https://en.wikipedia.org/wiki/Maxwell<em>relations">Maxwell Relations</a>, <a href="https://en.wikipedia.org/wiki/Thermodynamic</em>square">Thermodynamic Square</a>)
-</p>
-<p>
-<strong>Theorem</strong>: if $\{p_\theta : \theta \in \Theta\}$ is a <em>minimal</em> exponential family, then $\nabla_\theta \Phi(\theta)$ and $\nabla_\mu \Psi(\mu)$ are invertible and differentiable, thus hence the canonical pairing between moments and parameters is unique.
-</p>
-<p>
-<em>Proof</em>: the Hessian is $\nabla^2_\theta \Phi(\theta) = \Cov_\theta[\phi(y)]$. Under the assumption of minimality, $\Var_\theta[\langle a, \phi(y)\rangle] = a^T \Cov_\theta[\phi(0)] a > 0$ for $a \not = 0$ since if this variance can only be zero if $\langle a, \phi(y) \rangle = 0$ for $h(y)dy$-almost every $y$. It follows from properties of <a href="Convex Conjugate.html">Convex Conjugate</a> that $(\nabla_\theta \Phi, \nabla_\mu \Psi)$ are an invertible pair.
+\end{align*}
 </p>
             </div>
         </div>

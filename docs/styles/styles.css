@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap");
 .container {
   margin-top: 50px;
@@ -53,6 +54,35 @@ em {
 
 .feat {
   font-style: italic;
+}
+
+.qed::after {
+  content: "□";
+  font-size: 28px;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+}
+
+ins {
+  font-style: italic;
+  text-decoration: none;
+  color: rgba(210, 129, 247, 0.6274509804); /* Optional: style the prefix */
+}
+ins::before {
+  content: "(MD: "; /* The text to be prefixed */
+}
+ins::after {
+  content: ")";
+}
+
+a[href="#"] {
+  color: #a289ad; /* Sets the text color to blue */
+  text-decoration: none; /* Removes the underline */
+}
+a[href="#"]:hover {
+  text-decoration: line-through;
+  color: rgb(118, 109, 121);
 }
 
 .pagenav-link {

@@ -139,25 +139,25 @@ $$ <span class="qed" />
 <em>Remark</em>. It is possible to reduce the continuity assumption to one that $(X, T, d)$ is <em>separable</em>: there exists $T_0 \subset T$ such that $\lim_{T_0 \ni s \to t} X_s = X_t$ almost surely. Just apply the above bound to increasing finite subsets $\bar{T}_n \subseteq T_0$ and then invoke monotone convergence of $\E[\sup_{t \in \bar{T}^n} X_t] \nearrow \E[\sup_{t \in T} X_t]$.
 </p>
 <p>
-In the presence of <a href="Lipschitz Stochastic Process.html">lipschitzness</a>, it is also possible to prove a truncated form of Dudley's bound. This form of the bound is useful when $\sqrt{\log \Ncl(T, d, \eps)}$ is not integrable as $\eps \to 0$. As an example, see the discussion of <a class="broken" href="#">Parametric, Non-parametric, and Donsker Classes</a>.
+In the presence of [[Lipschitz Stochastic Process|lipschitzness]], it is also possible to prove a truncated form of Dudley's bound. This form of the bound is useful when $\sqrt{\log \Ncl(T, d, \eps)}$ is not integrable as $\eps \to 0$. As an example, see the discussion of [[Parametric, Non-parametric, and Donsker Classes]].
 </p>
 <hr />
 <p>
-<strong>Theorem (truncated Dudley integral)</strong>. Suppose that $(X_t)_{t \in T}$ is a <a href="Lipschitz Stochastic Process.html">Lipschitz Stochastic Process</a> with (possibly random) Lipschitz constant $C$. Suppose further that $(X, T, d)$ satisfies the continuity property above. Then,
+**Theorem (truncated Dudley integral)**. Suppose that $(X_t)_{t \in T}$ is a [[Lipschitz Stochastic Process]] with (possibly random) Lipschitz constant $C$. Suppose further that $(X, T, d)$ satisfies the continuity property above. Then,
 $$ \E\left[ \sup_{t \in T} X_t \right] \leq \inf_{\eps > 0} \left\{ 2\eps \, \E[C] + 12 \int_\eps^\infty \sqrt{\log \Ncl(T, d, \eps)} \, d\eps \right\}$$
 </p>
 <hr />
 <p>
 <em>Proof</em>. In the same setting as the proof above, let $n = \inf\{k \in \Z : 2^{-(k+1)} < \eps\}$. Then we can take
 $$
-X_t = X_{t_0} + X_{t} - X_{\pi^n(t)} + \sum_{k = k_0 + 1}^{n} X_{\pi^k(t)}-X_{\pi^{k-1}(t)}
+X<em>t = X</em>{t<em>0} + X</em>{t} - X<em>{\pi^n(t)} + \sum</em>{k = k<em>0 + 1}^{n} X</em>{\pi^k(t)}-X_{\pi^{k-1}(t)}
 $$
 and, by the same reasoning, we have
 $$
-\begin{aligned}
-\E \left[ \sup_{t \in T}X_t\right] & \leq \E[\sup_{t \in T} |X_t - X_{\pi^n(t)}|] + 6 \sqrt{2} \sum_{k=k_0+1}^n 2^{-(k+1)} \sqrt{\log \Ncl(T, d, 2^{-k})} \\
+\begin{align*}
+\E \left[ \sup<em>{t \in T}X</em>t\right] & \leq \E[\sup<em>{t \in T} |X</em>t - X<em>{\pi^n(t)}|] + 6 \sqrt{2} \sum</em>{k=k_0+1}^n 2^{-(k+1)} \sqrt{\log \Ncl(T, d, 2^{-k})} \\
 & \leq 2 \eps\,\E[C] + 6 \sqrt{2} \int_\eps^\infty \sqrt{\log \Ncl(T, d, \eps)} \, d\eps
-\end{aligned}
+\end{align*}
 $$
 since $d(t, \pi^n(t)) \leq 2^{-n} \leq 2 \eps$.  <span class="qed" />
 </p>
@@ -166,34 +166,33 @@ Finally, note that the proof techniques above can also be generalized to the sit
 </p>
 <hr />
 <p>
-<strong>Theorem (generic dudley entropy integral)</strong>. Suppose that $(X_t)_{t \in T}$ satisfies,
+**Theorem (generic dudley entropy integral)**. Suppose that $(X_t)_{t \in T}$ satisfies,
 $$
-\log \E\left[ \exp \left( \frac{\lambda (X_t - X_s)}{d(t, s)}\right)\right] \leq \phi(\lambda)
+\log \E\left[ \exp \left( \frac{\lambda (X<em>t - X</em>s)}{d(t, s)}\right)\right] \leq \phi(\lambda)
 $$
 for some convex function $\phi(\lambda)$ such that $\phi(0) = \phi'(0) = 0$. Then,
 $$
-\E\left[ \sup_{t\in T} X_t \right] \lesssim \int_0^\infty (\phi^*)^{-1}(2 \log \Ncl(T, d, \eps)) \, d \eps
+\E\left[ \sup<em>{t\in T} X</em>t \right] \lesssim \int_0^\infty (\phi^*)^{-1}(2 \log \Ncl(T, d, \eps)) \, d \eps
 $$
 and, if the process is also Lipschitz, then this integral can be truncated as in the previous theorem.
 </p>
 <hr />
 <p>
-<em>Proof</em>. Apply the same proof techniques as above using the <a href="Discrete Maximal Inequality.html">Discrete Maximal Inequality</a>. <span class="qed" />
+<em>Proof</em>. Apply the same proof techniques as above using the [[Discrete Maximal Inequality]]. <span class="qed" />
 </p>
 <h2 id="application-to-empirical-processes">Application to Empirical Processes</h2>
 <p>
-The one-step chaining bound can be applied in the following way to bound the supremum of an <a href="Empirical Process Theory.html">empirical process</a>. Let $\Fcl$ be a function class, let $X_1, \ldots, X_n \sim \mu$ i.i.d., and let $G_n(f)$ be the empirical process,
+The one-step chaining bound can be applied in the following way to bound the supremum of an [[Empirical Process Theory|empirical process]]. Let $\Fcl$ be a function class, let $X_1, \ldots, X_n \sim \mu$ i.i.d., and let $G_n(f)$ be the empirical process,
 $$
-G_n(f) = \frac{1}{\sqrt{n}} \sum_{i=1}^n (f(X_i) - \E_\mu[f(X)]).
+G<em>n(f) = \frac{1}{\sqrt{n}} \sum</em>{i=1}^n (f(X<em>i) - \E</em>\mu[f(X)]).
 $$
-By <a href="Hoeffding's Inequality.html">Hoeffding's Inequality</a>, $G_n(f) - G_n(g)$ is sub-gaussian with parameter $\|f-g\|_\infty^2/4$. Indeed, since $G_n(f) - G_n(g) = G_n(f-g)$, we have
+By [[Hoeffding's Inequality]], $G_n(f) - G_n(g)$ is sub-gaussian with parameter $\|f-g\|_\infty^2/4$. Indeed, since $G_n(f) - G_n(g) = G_n(f-g)$, we have
 $$
-\log \E\left[\exp(\lambda G_n(f-g))\right]  = \sum_{i=1}^n \log \E\left[\exp\left(\frac{\lambda}{\sqrt{n}}(f(X_i) - g(X_i))\right)\right] \leq \frac{\lambda^2\|f - g\|_\infty^2}{8}
+\log \E\left[\exp(\lambda G<em>n(f-g))\right]  = \sum</em>{i=1}^n \log \E\left[\exp\left(\frac{\lambda}{\sqrt{n}}(f(X<em>i) - g(X</em>i))\right)\right] \leq \frac{\lambda^2\|f - g\|_\infty^2}{8}
 $$
-As discussed in the <a href="One-step Chaining Inequality.html#application-to-empirical-processes">one-step chaining bound for empirical processes</a>, the process is also Lipschitz with constant $\sqrt{n}\sup_{f \in \Fcl}\|f\|_\infty$. Therefore the truncated Dudley integral reads,
+As discussed in the [[One-step Chaining Inequality#Application to Empirical Processes|one-step chaining bound for empirical processes]], the process is also Lipschitz with constant $\sqrt{n}\sup_{f \in \Fcl}\|f\|_\infty$. Therefore the truncated Dudley integral reads,
 $$
-\E \left[ \sup_{f \in \Fcl} G_n(f)\right] \lesssim \inf_{\eps \geq 0} \left\{ \eps \sqrt{n}\, \sup_{f \in \Fcl}\|f\|_\infty + \int_\eps^\infty \sqrt{\log \Ncl(\Fcl, \|\cdot\|_\infty, \eps) }\, d\eps\right\}
-$$
+\E \left[ \sup<em>{f \in \Fcl} G</em>n(f)\right] \lesssim \inf<em>{\eps \geq 0} \left\{ \eps \sqrt{n}\, \sup</em>{f \in \Fcl}\|f\|<em>\infty + \int</em>\eps^\infty \sqrt{\log \Ncl(\Fcl, \|\cdot\|_\infty, \eps) }\, d\eps\right\}
 </p>
             </div>
         </div>
