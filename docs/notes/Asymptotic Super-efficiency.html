@@ -108,18 +108,23 @@
 </li>
 </ul>
 <p>
-T<em>n = \begin{cases} \hat{x}</em>n & |\hat{x}_n| \geq n^{-1/4} \\ 0 & \text{otherwise} \end{cases}
+T_n = \begin{cases} \hat{x}_n & |\hat{x}_n| \geq n^{-1/4} \\ 0 & \text{otherwise} \end{cases}
 $$
-For any $\theta \not = 0$, with sufficiently large $n \gg 1$, it follows from the CLT that $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 0$ in probability and hence $\sqrt{n}(T_n - \theta) \stackrel{d}{\longrightarrow} \Ncl(0, 1)$. But when $\theta = 0$, by a similar argument, $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 1$ which converges _faster_ than what is predicted by the CLT.
+For any $\theta \not = 0$, with sufficiently large $n \gg 1$, it follows from the CLT that $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 0$ in probability and hence $\sqrt{n}(T_n - \theta) \stackrel{d}{\longrightarrow} \Ncl(0, 1)$. But when $\theta = 0$, by a similar argument, $P(|\hat{x}_n - \theta| \leq n^{-1/4}) \to 1$ which converges <em>faster</em> than what is predicted by the CLT.
 </p>
 <ul>
-<li>This example is a trick! It abuses the fact that asymptotic efficiency is a _pointwise_ diagnostic for each $\theta \in \Theta$. While enjoying excellent performance at $\theta = 0$, it has extremely poor performance in a shrinking neighborhood of zero.
+<li>This example is a trick! It abuses the fact that asymptotic efficiency is a <em>pointwise</em> diagnostic for each $\theta \in \Theta$. While enjoying excellent performance at $\theta = 0$, it has extremely poor performance in a shrinking neighborhood of zero.
 </li>
 </ul>
 <p>
-**Hàjek-Le Cam Convolution Theorem**: consider an estimator $\theta_n$ such that for some family of R.V.s $\{V_\theta : \theta \in \Theta\}$, $\sqrt{n}(\theta_n - \theta) \stackrel{d}{\longrightarrow} V_\theta$ for every $\theta$. Then there is a family of R.V.s $\{U_\theta : \theta \in \Theta\}$ such that,
+<strong>Hàjek-Le Cam Convolution Theorem</strong>: consider an estimator $\theta_n$ such that for some family of R.V.s $\{V_\theta : \theta \in \Theta\}$, $\sqrt{n}(\theta_n - \theta) \stackrel{d}{\longrightarrow} V_\theta$ for every $\theta$. Then there is a family of R.V.s $\{U_\theta : \theta \in \Theta\}$ such that,
 $$
-V<em>\theta \stackrel{d}{=} Z</em>\theta + U_\theta \qquad \text{a.e. $\theta \in \Theta$}
+V_\theta \stackrel{d}{=} Z_\theta + U_\theta \qquad \text{a.e. $\theta \in \Theta$}
+$$
+where $Z_\theta \sim N(0, [I(\theta)]^{-1})$ is independent of $U_\theta$.
+</p>
+<p>
+<em>Remark</em>: as a consequence of independence, $\Cov_\theta(V_\theta) = \Cov(Z_\theta) + \Cov(U_\theta) \succcurlyeq [I(\theta)]^{-1}$. So, the Cramér-Rao bound holds for almost every $\theta \in \Theta$.
 </p>
             </div>
         </div>

@@ -156,7 +156,7 @@ $$ <p class="qed" />
 <h2 id="stopping-times-and-instantaneous-randomness">Stopping Times and Instantaneous Randomness</h2>
 <hr />
 <p>
-**Proposition (stopping times & instantaneous randomness)**. let $T : \Omega \to [0, \infty]$ be a random variable. The following are equivalent:
+<strong>Proposition (stopping times & instantaneous randomness)</strong>. let $T : \Omega \to [0, \infty]$ be a random variable. The following are equivalent:
 </p>
 <ol>
 <li>$T$ is a stopping time of $\Fcl_{t+}$.
@@ -169,16 +169,16 @@ $$ <p class="qed" />
 <p>
 Furthermore, when $T$ is a stopping time of $\Fcl_{t+}$, then the corresponding stopped filtration $\Fcl_{T+}$ can be defined in two equivalent ways:
 $$
-\begin{align*}
-\Fcl<em>{T+} & = \{A \in \Fcl</em>\infty : \forall t > 0, A \cap \{T \leq t\} \in \Fcl_{t+}\} \\
-&= \{A \in \Fcl<em>\infty : \forall t > 0, A \cap \{T < t\} \in \Fcl</em>t\}
-\end{align*}
+\begin{aligned}
+\Fcl_{T+} & = \{A \in \Fcl_\infty : \forall t > 0, A \cap \{T \leq t\} \in \Fcl_{t+}\} \\
+&= \{A \in \Fcl_\infty : \forall t > 0, A \cap \{T < t\} \in \Fcl_t\}
+\end{aligned}
 $$
 </p>
 <hr />
 <p>
 Generally speaking, the interesting content of this proposition are statements of the flavor that
-'$\{T <  t\} \in \Fcl_t$ is equivalent to $\{T \leq t\} \in \Fcl_{t+}$'.  If $(\Fcl_t)_{t \geq 0}$ is not [[Stopping Time#Stopping Times and Instantaneous Randomness|right continuous]] then we may run into situations where $\{T = t\} \not \in \Fcl_t$ but $\{T = t\} \in \Fcl_{t+}$, so  $T$ cannot technically be defined as a stopping time with respect to $\Fcl_t$. Instead, the above proposition describes how to treat $T$ as a stopping time by using $(\Fcl_{t+})_{t \geq 0}$.
+'$\{T <  t\} \in \Fcl_t$ is equivalent to $\{T \leq t\} \in \Fcl_{t+}$'.  If $(\Fcl_t)_{t \geq 0}$ is not <a href="Stopping Time.html#stopping-times-and-instantaneous-randomness">right continuous</a> then we may run into situations where $\{T = t\} \not \in \Fcl_t$ but $\{T = t\} \in \Fcl_{t+}$, so  $T$ cannot technically be defined as a stopping time with respect to $\Fcl_t$. Instead, the above proposition describes how to treat $T$ as a stopping time by using $(\Fcl_{t+})_{t \geq 0}$.
 </p>
 <p>
 <em>Proof sketch</em>.
@@ -197,7 +197,7 @@ The representation of $\Fcl_{T+}$ follows by similar arguments. <p class="qed" /
 <h2 id="stopping-times-and-limits">Stopping Times and Limits</h2>
 <hr />
 <p>
-**Proposition (stopping times & limits)** suppose $(S_n)_{n \geq 1}$ is a sequence of stopping times.
+<strong>Proposition (stopping times & limits)</strong> suppose $(S_n)_{n \geq 1}$ is a sequence of stopping times.
 </p>
 <ol>
 <li>If $S_n$ is monotone increasing, then $S = \lim_{n \to \infty} S_n$ is also a stopping time.
@@ -215,13 +215,28 @@ The representation of $\Fcl_{T+}$ follows by similar arguments. <p class="qed" /
 <h4 id="discretizing-stopping-times">Discretizing stopping times</h4>
 <hr />
 <p>
-**Proposition (discretizing stopping times)**. suppose that $T$ is a stopping time and $S$ is an $\Fcl_T$ measurable r.v. with $S \geq T$ almost surely. Then $S$ is also a stopping time. In particular, setting
+<strong>Proposition (discretizing stopping times)</strong>. suppose that $T$ is a stopping time and $S$ is an $\Fcl_T$ measurable r.v. with $S \geq T$ almost surely. Then $S$ is also a stopping time. In particular, setting
 $$
 T_n(\omega) = \begin{cases}
 \frac{k+1}{2^n} & k 2^{-n} \leq T(\omega) \leq (k+1)2^{-n} \\
 \infty & T(\omega) = \infty \\
 \end{cases}
+$$
+the r.v.s $T_n$ form a sequence of monotonically decreasing stopping times that approach $T$.
 </p>
+<hr />
+<h4 id="entry-times">Entry Times</h4>
+<hr />
+<p>
+<strong>Proposition (entry times)</strong>. let $(X_t)_{t \geq 0}$ be a adapted stochastic process taking values in a metric space $(E, d)$ and let $O$, $F$ be open and closed subsets of $E$ respectively. Then:
+</p>
+<ol>
+<li>If $(X_t)_{t \geq 0}$ has right continuous sample paths, then $T_O \coloneqq \inf \{t \geq 0 : X_t \in O\}$ is a stopping time of $\Fcl_{t+}$.
+</li>
+<li>If $(X_t)_{t \geq 0}$ has continuous sample paths, then $T_F \coloneqq \inf \{t \geq 0 : X_t \in F\}$ is a stopping time of $\Fcl_t$.
+</li>
+</ol>
+<hr />
             </div>
         </div>
         <div class="row">

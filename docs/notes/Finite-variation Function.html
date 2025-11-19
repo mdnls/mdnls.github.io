@@ -137,7 +137,7 @@ The measure $|\mu| \coloneqq \mu^+ + \mu^-$ is called the <em>total variation me
 </li>
 </ol>
 <p>
-\int<em>0^T g(s) \, df(s) \coloneqq \int</em>0^T g(s) \ \mu(ds) \qquad \int<em>0^T g(s) \, |df(s)| \coloneqq \int</em>0^T g(s) \, |\mu|(ds)
+\int_0^T g(s) \, df(s) \coloneqq \int_0^T g(s) \ \mu(ds) \qquad \int_0^T g(s) \, |df(s)| \coloneqq \int_0^T g(s) \, |\mu|(ds)
 $$
 </p>
 <ol>
@@ -149,7 +149,7 @@ For a given continuous function $g(t)$, integration with respect to $f(t)$ yield
 </p>
 <hr />
 <p>
-**Proposition (closure of F.V. functions wrt. integration)** for continuous $g(t) : [0, T] \to \R$ and for finite variation $f(t) : [0, T] \to \R$, the function
+<strong>Proposition (closure of F.V. functions wrt. integration)</strong> for continuous $g(t) : [0, T] \to \R$ and for finite variation $f(t) : [0, T] \to \R$, the function
 $$
 G(t) = \int_0^t g(s) \, df(s)
 $$
@@ -162,11 +162,13 @@ $$
 <p>
 <em>Proof sketch</em>. similar to simple function approximations of the Lebesgue integral, we can represent $G(t)$ using a sequence $(P^n)_{n \geq 1}$ of partitions $0 = t^n_0 < t^n_1 < \ldots < t^n_{p_n}=T$, for which it holds
 $$
-G(T) = \lim<em>{n \to \infty} \sum</em>{i=1}^{p<em>n}g(t</em>i)|f(t<em>i) - f(t</em>{i-1})|
+G(T) = \lim_{n \to \infty} \sum_{i=1}^{p_n}g(t_i)|f(t_i) - f(t_{i-1})|
 $$
 Then, the condition for $G$ to have finite variation is that
 $$
-\infty > \lim<em>{n \to \infty} \sum</em>{i=1}^{p<em>n} |g(t</em>i)| |f(t<em>i) - f(t</em>{i-1})|
+\infty > \lim_{n \to \infty} \sum_{i=1}^{p_n} |g(t_i)| |f(t_i) - f(t_{i-1})|
+$$
+and the right hand side is none other than $\int_0^T |g(s)| \, |df(s)|$.
 </p>
             </div>
         </div>

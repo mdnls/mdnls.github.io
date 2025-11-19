@@ -144,7 +144,7 @@ Then $(X_t)_{t \geq 0}$ admits a modification with cádlág sample paths, which 
 </li>
 </ol>
 <p>
-X<em>{t+}(\omega) \coloneqq \lim</em>{D \ \ni \ s \to t+} X_s(\omega)
+X_{t+}(\omega) \coloneqq \lim_{D \ \ni \ s \to t+} X_s(\omega)
 $$and we take $N$ to be the (null) set of $\omega \in \Omega$ where the limit does not exist. This fact can be proven with Doob's upcrossing inequality + an analytical lemma that basically says 'bounded upcrossing numbers implies existence of right limits.'
 </p>
 <ol>
@@ -247,6 +247,9 @@ $(2 \Rightarrow 3)$. if $(2)$ holds then already there exists a limit $X_\infty$
 </p>
 <p>
 $(3 \Rightarrow 2)$. under $(3)$, we aim to show that $X_t = \E[X_\infty \mid \Fcl_t]$ by proving that $X_t = \E[X_s \mid \Fcl_t] \to \E[X_\infty \mid \Fcl_t]$ as $s \to \infty$. This follows from Jensen's inequality:
+$$
+\|\E[X_s\mid \Fcl_t] - \E[X_\infty \mid \Fcl_t]\|_1 = \E[|\E[X_s - X_\infty \mid \Fcl_t]|] \leq \|X_s - X_\infty\|_1 \stackrel{s \to \infty}{\longrightarrow} 0.
+$$ <p class="qed" />
 </p>
             </div>
         </div>

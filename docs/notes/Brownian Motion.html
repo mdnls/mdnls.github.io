@@ -148,18 +148,18 @@ $$
 A_k = \bigcup_{1 \leq i \leq k} \left\{\left| \bar{B}_i^k - \bar{B}^k_{i+1}\right| \geq 2^{-\alpha k}\right\}\qquad k \geq 0
 $$
 occur finitely often. But $A_k$ is precisely the event that
-$$\sup<em>{i \leq 2^k} \frac{|\bar{B}</em>{t<em>{i}^k}(\omega) - \bar{B}</em>{t<em>{i+1}^k}(\omega)|}{|t</em>i^k - t_{i+1}^k|^\alpha}  \leq 1
+$$\sup_{i \leq 2^k} \frac{|\bar{B}_{t_{i}^k}(\omega) - \bar{B}_{t_{i+1}^k}(\omega)|}{|t_i^k - t_{i+1}^k|^\alpha}  \leq 1
 $$
 and so, for $P$-almost every $\omega \in \Omega$, $K_\alpha(\omega)$ is a supremum over finitely many numbers. <span class="qed"></span>
 </p>
 <p>
-<em>Remark</em>. this is a simple example of a chaining upper bound! At each scale $k \geq 0$, we proved an upper bound on the fluctuations (w.h.p.) by $2^{-\alpha k}$. It is interesting to contrast this with an argument like that of [[Dudley's Entropy Integral]]. In the present case, we are interested in a <em>relative</em> bound on the fluctuations at each scale, so we prove that $|\bar{B}_{t_{i}^k}(\omega) - \bar{B}_{t_{i+1}^k}(\omega)| / |t_i^k - t_{i+1}^k|^\alpha \lesssim 1$ almost surely. Whereas the point of the entropy integral is to compute an <em>absolute</em> bound on the supremum by summing the bounds across all scales.
+<em>Remark</em>. this is a simple example of a chaining upper bound! At each scale $k \geq 0$, we proved an upper bound on the fluctuations (w.h.p.) by $2^{-\alpha k}$. It is interesting to contrast this with an argument like that of <a href="Dudley's Entropy Integral.html">Dudley's Entropy Integral</a>. In the present case, we are interested in a <em>relative</em> bound on the fluctuations at each scale, so we prove that $|\bar{B}_{t_{i}^k}(\omega) - \bar{B}_{t_{i+1}^k}(\omega)| / |t_i^k - t_{i+1}^k|^\alpha \lesssim 1$ almost surely. Whereas the point of the entropy integral is to compute an <em>absolute</em> bound on the supremum by summing the bounds across all scales.
 </p>
 <hr />
 <p>
-**Proposition (unification across scales)** let $D = \cup_{k \geq 0} D^k$. For those $\omega \in \Omega$ such that
+<strong>Proposition (unification across scales)</strong> let $D = \cup_{k \geq 0} D^k$. For those $\omega \in \Omega$ such that
 $$
-K<em>\alpha(\omega) \coloneqq  \sup</em>{k \geq 1} \sup<em>{i \leq 2^k} \frac{|\bar{B}</em>{t<em>{i}^k}(\omega) - \bar{B}</em>{t<em>{i+1}^k}(\omega)|}{|t</em>i^k - t_{i+1}^k|^\alpha} < \infty,
+K_\alpha(\omega) \coloneqq  \sup_{k \geq 1} \sup_{i \leq 2^k} \frac{|\bar{B}_{t_{i}^k}(\omega) - \bar{B}_{t_{i+1}^k}(\omega)|}{|t_i^k - t_{i+1}^k|^\alpha} < \infty,
 $$
 Then it holds for any $s, t \in D$ that
 $$|\bar{B}_t(\omega) - \bar{B}_s(\omega)| \leq \frac{2 K_\alpha(\omega)}{1-2^{-\alpha}} |t-s|^\alpha$$
@@ -171,20 +171,20 @@ $$|\bar{B}_t(\omega) - \bar{B}_s(\omega)| \leq \frac{2 K_\alpha(\omega)}{1-2^{-\
 <p>
 Let $p$ be the smallest integer so that $2^{-p} < t-s$. Let $k \geq 0$ be the smallest integer with $s \leq k2^{-p}$. Then:
 $$
-\begin{align*}
-s & = k2^{-p} - \eps<em>1 2^{-p-1} - \ldots - \eps</em>l2 ^{-p-l} \\
-t & = k 2^{-p} + \eps<em>0' 2^{-p} - \eps</em>1' 2^{-p-1} - \ldots - \eps_l' 2^{-p-l'}
-\end{align*}
+\begin{aligned}
+s & = k2^{-p} - \eps_1 2^{-p-1} - \ldots - \eps_l2 ^{-p-l} \\
+t & = k 2^{-p} + \eps_0' 2^{-p} - \eps_1' 2^{-p-1} - \ldots - \eps_l' 2^{-p-l'}
+\end{aligned}
 $$
 for some integers $l'$. The picture is:
-![[Screenshot 2024-01-08 at 4.09.49 PM.png]]
+<img src="assets/Screenshot 2024-01-08 at 4.09.49 PM.png" alt="Screenshot 2024-01-08 at 4.09.49 PM.png" style="width: 100%; height: auto;">
 Set $s_j = k 2^{-p} \sum_{r \leq j} \eps_r 2^{-p-r}$ and define $t_j$ likewise. By the triangle inequality,
 $$
-\begin{align*}
-|\bar{B}<em>t(\omega) - \bar{B}</em>s(\omega)| & \leq |\bar{B}<em>{t</em>0}(\omega) - \bar{B}<em>{s</em>0}(\omega)| + \sum<em>{j=1}^l |\bar{B}</em>{t<em>j} - \bar{B}</em>{t<em>{j-1}}| + \sum</em>{j=1}^{l'}|\bar{B}<em>{s</em>j} - \bar{B}<em>{s</em>{j-1}}| \\
-& \leq K<em>\alpha(\omega) \left(2^{-p\alpha} + 2 \sum</em>{j=1}^\infty 2^{-\alpha(p+j)}\right)\\
+\begin{aligned}
+|\bar{B}_t(\omega) - \bar{B}_s(\omega)| & \leq |\bar{B}_{t_0}(\omega) - \bar{B}_{s_0}(\omega)| + \sum_{j=1}^l |\bar{B}_{t_j} - \bar{B}_{t_{j-1}}| + \sum_{j=1}^{l'}|\bar{B}_{s_j} - \bar{B}_{s_{j-1}}| \\
+& \leq K_\alpha(\omega) \left(2^{-p\alpha} + 2 \sum_{j=1}^\infty 2^{-\alpha(p+j)}\right)\\
 & \leq \frac{2 K_\alpha(\omega)}{1-2^{-\alpha}} |t-s|^\alpha.
-\end{align*}
+\end{aligned}
 $$
 and the claim follows. <span class="qed" />
 </p>
@@ -193,7 +193,7 @@ We are now finally in a position to construct brownian motion.
 </p>
 <hr />
 <p>
-**Theorem (Construction of Brownian Motion)** let $\bar{B}_t$ be a Gaussian white noise, as above. For each $\omega \in \Omega$, let $B_t(\omega) = \lim_{s \in D, s \to t} \bar{B}_t$. By the previous propositions, $t \mapsto B_t(\omega)$ is $\alpha$-Hölder continuous, for any $\alpha \in (0, 1/2)$. We claim that $B_t$ is also a [[Modification (Stochastic Process)|modification]] of $\bar{B}_t$ and that any continuous modification of $\bar{B}_t$ is [[Indistinguishable (Stochastic Process)|indistinguishable]] from $B_t$.
+<strong>Theorem (Construction of Brownian Motion)</strong> let $\bar{B}_t$ be a Gaussian white noise, as above. For each $\omega \in \Omega$, let $B_t(\omega) = \lim_{s \in D, s \to t} \bar{B}_t$. By the previous propositions, $t \mapsto B_t(\omega)$ is $\alpha$-Hölder continuous, for any $\alpha \in (0, 1/2)$. We claim that $B_t$ is also a <a href="Modification (Stochastic Process).html">modification</a> of $\bar{B}_t$ and that any continuous modification of $\bar{B}_t$ is <a href="Indistinguishable (Stochastic Process).html">indistinguishable</a> from $B_t$.
 </p>
 <hr />
 <p>
@@ -205,23 +205,25 @@ If $Y_t$ is also a continuous modification of $\bar{B}_t$, then consider the eve
 <h2 id="strong-markov-property">Strong Markov Property</h2>
 <hr />
 <p>
-**Proposition**: let $(B_t)_{t \geq 0}$ be Brownian motion and let $T$ be a stopping time that is almost surely finite. Then the random variables $B^{(T)}_t = B_{T + t} - B_T$, $t \geq 0$ form a Brownian motion independent of $\Fcl_T$.
+<strong>Proposition</strong>: let $(B_t)_{t \geq 0}$ be Brownian motion and let $T$ be a stopping time that is almost surely finite. Then the random variables $B^{(T)}_t = B_{T + t} - B_T$, $t \geq 0$ form a Brownian motion independent of $\Fcl_T$.
 </p>
 <hr />
 <p>
 <em>Proof</em>. the idea is to decouple $T$, $B^{(T)}_t$ by rounding the values of $T$. For any continuous bounded function $F(x_1, \ldots, x_n)$ and any $A \in \Fcl_T$, we claim
 $$
-\E[F(B^{(T)}<em>{t</em>1}, \ldots, B^{(T)}<em>{t</em>n})\ 1<em>A] = P(A) \E[F(B</em>{t<em>1}\, \ldots\, B</em>{t_n})]
+\E[F(B^{(T)}_{t_1}, \ldots, B^{(T)}_{t_n})\ 1_A] = P(A) \E[F(B_{t_1}\, \ldots\, B_{t_n})]
 $$
 Let $[T]_k = \inf \{k 2^{-n} : T \leq k 2^{-n}\}$. Then (by dominated convergence)
 $$
-\lim<em>{k \to \infty} F(B^{([T]</em>k)}<em>{t</em>1},\ldots,B^{([T]<em>k)}</em>{t<em>n}) = F(B^{(T)}</em>{t<em>1} , \ldots, B^{(T)}</em>{t_n})
+\lim_{k \to \infty} F(B^{([T]_k)}_{t_1},\ldots,B^{([T]_k)}_{t_n}) = F(B^{(T)}_{t_1} , \ldots, B^{(T)}_{t_n})
 $$
 so that
 $$
-\begin{align*}
-\E[F(B^{(T)}<em>{t</em>1}, \ldots, B^{(T)}<em>{t</em>n})\ 1<em>A] & =  \sum</em>{i \geq 0}\E\left[ \underbrace{1\{(i-1)2^{-n} < T \leq i2^{-n}\} \ 1<em>A}</em>{(1)}\ \underbrace{F(B^{(i2^{-k})}<em>{t</em>1},\ldots, B^{(i2^{-k})}<em>{t</em>n})}_{(2)}\right].
-\end{align*}
+\begin{aligned}
+\E[F(B^{(T)}_{t_1}, \ldots, B^{(T)}_{t_n})\ 1_A] & =  \sum_{i \geq 0}\E\left[ \underbrace{1\{(i-1)2^{-n} < T \leq i2^{-n}\} \ 1_A}_{(1)}\ \underbrace{F(B^{(i2^{-k})}_{t_1},\ldots, B^{(i2^{-k})}_{t_n})}_{(2)}\right].
+\end{aligned}
+$$
+For each $i \geq 0$, the indicator $(1)$ corresponds to the set $\{(i-1)2^{-n} < T \leq i 2^{-n}\} \cap A$ which is $\Fcl_{i2^{-n}}$ measurable because of the fact that $A \in \Fcl_T$ and $\{(i-1)2^{-n} < T\} \in \Fcl_{(i-1)2^{-n}} \subseteq \Fcl_{i2^{-n}}$. Whereas by the simple Markov property, $B^{(i2^{-k})}_{t_j}$ is independent of $\Fcl_{i2^{-n}}$ for all $j = 1 \ldots n$.
 </p>
             </div>
         </div>

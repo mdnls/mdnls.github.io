@@ -127,9 +127,20 @@ $$
 <h2 id="equivalence-between-packing-and-covering">Equivalence between packing and covering</h2>
 <hr />
 <p>
-**Proposition (packing and covering equivalence)**. Let $S \subseteq \Xcl$, then
+<strong>Proposition (packing and covering equivalence)</strong>. Let $S \subseteq \Xcl$, then
 $$
 \Pcl(S, d, 2\eps) \leq \Ncl(S, d, \eps) \leq \Pcl(S, d, \eps)
+$$
+</p>
+<hr />
+<p>
+<em>Proof</em>. For the first inequality, some good intuition is that any $2\eps$-packing $P$ can be viewed as a collection of disjoint $\eps$-balls contained in $S$, which can be converted to an $\eps$-covering by adding more $\eps$-balls to $P$. However, this is not a full proof, since we need to show that the maximal packing is upper bound in size by a minimal covering. Let $P$ be a maximal $\eps$-packing and let $Q$ be minimal $\eps$-covering respectively.
+</p>
+<p>
+Take $\pi(x) = \arg \inf_{y \in Q} d(x, y)$ the projection onto $Q$. Then, for $x, x' \in P$, the triangle inequality implies that $\pi(x) = \pi(x') \implies d(x, x') \leq d(x, \pi(x)) + d(x', \pi(x)) = 2\eps$. The fact that $P$ is a $2\eps$-packing forces $x=x'$. Thus $\pi$ is a one-to-one mapping and $|Q| \geq |\pi(P)| = |P|$.
+</p>
+<p>
+For the second inequality, note that if $P$ is a maximal $\eps$-packing, then for any $x \in S$, it is impossible that $\inf_{y \in P} d(x, y) > \eps$ since otherwise $\{x\} \cup P$ would also be an $\eps$-packing. The fact that $P$ is also an $\eps$-covering forces $|P| \geq \Ncl(S, d, \eps)$. <span class="qed" />
 </p>
             </div>
         </div>

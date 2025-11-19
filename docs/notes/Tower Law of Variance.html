@@ -99,28 +99,37 @@
             <h1>Tower Law of Variance</h1>
 <p>
 <strong>Tower Law of Variance</strong>: let $(X, Y)$ be random variables with joint distribution $\pi$. The marginal variance $\Var_y(Y)$ can be decomposed as,
-$$ \Var<em>y(Y) = \E</em>x[\Var(Y \mid X)] + \Var_x(\E[Y \mid X]).
+$$ \Var_y(Y) = \E_x[\Var(Y \mid X)] + \Var_x(\E[Y \mid X]).
 $$
-Here, the notation $\E_x[ \cdot ]$ and $\Var_x(\cdot)$ represent the variance of a function of $X\sim \pi$ _marginalized_ over $Y$, and likewise for $\E_y[\cdot]$ and $\Var_y(\cdot)$.
+Here, the notation $\E_x[ \cdot ]$ and $\Var_x(\cdot)$ represent the variance of a function of $X\sim \pi$ <em>marginalized</em> over $Y$, and likewise for $\E_y[\cdot]$ and $\Var_y(\cdot)$.
 </p>
 <p>
-_Proof_: by direct evaluation,
+<em>Proof</em>: by direct evaluation,
 $$
-\begin{align*}
-\E<em>y[(Y - \E</em>y[Y])^2] & = \E[(Y - \E[Y\mid X] + \E[Y \mid X] - \E_y[Y])^2] \\
-& = \underbrace{\E[(Y - \E[Y \mid X])^2]}<em>{(1)} + \underbrace{\E[(\E[Y \mid X] - \E</em>y[Y])^2]}<em>{(2)} + 2 \underbrace{\E[(Y - \E[Y \mid X])(\E[Y \mid X] - \E</em>y[Y])]}_{(3)}
-\end{align*}
+\begin{aligned}
+\E_y[(Y - \E_y[Y])^2] & = \E[(Y - \E[Y\mid X] + \E[Y \mid X] - \E_y[Y])^2] \\
+& = \underbrace{\E[(Y - \E[Y \mid X])^2]}_{(1)} + \underbrace{\E[(\E[Y \mid X] - \E_y[Y])^2]}_{(2)} + 2 \underbrace{\E[(Y - \E[Y \mid X])(\E[Y \mid X] - \E_y[Y])]}_{(3)}
+\end{aligned}
 $$
 These terms are,
 $$
-\begin{align*}
+\begin{aligned}
 (1) & = \E_x[\Var(Y \mid X)] \\
 (2) & = \Var_x[\E[Y \mid X]] \\
-(3) & = \E<em>x [\E[ Y - \E[Y \mid X] \, \mid X] (\E[Y \mid X] - \E</em>y[Y])\\
+(3) & = \E_x [\E[ Y - \E[Y \mid X] \, \mid X] (\E[Y \mid X] - \E_y[Y])\\
 & = (\E[Y \mid X] - \E[Y \mid X])(\E[Y \mid X] - \E_y[Y]) \\
 & = 0
-\end{align*}
+\end{aligned}
+$$
+where, in the final step, we used that $\E[\cdot] = \E_x[ \E [\ \cdot \mid X]]$.
 </p>
+<p>
+<strong>See Also</strong>:
+</p>
+<ul>
+<li><a class="broken" href="#">Tower Law of Entropy</a>
+</li>
+</ul>
             </div>
         </div>
         <div class="row">

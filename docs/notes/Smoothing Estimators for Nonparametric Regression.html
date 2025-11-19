@@ -256,10 +256,11 @@ Basically, we can weaken the condition $\int K(z)^2 P(x+hz) \, dz < \infty$ to t
 <p>
 If $P(x)$ satisfies a Poincaré inequality of the form $\mathsf{Var}[f(x)] \leq C_{\mathsf{PI}} \E[|\nabla f\|^2]$ then the analysis of the variance bound becomes,
 $$
-\begin{align*}
-\E<em>{x'}[|f(x') K</em>h(x - x') - \bar{f}(x)|^2] & \leq C<em>{\mathsf{PI}} \E</em>{x'}\left[\left\|\nabla f(x') K_h(x-x')\ - \frac{1}{h^2}f(x') (\nabla K) \left( \frac{x-x'}{h}\right) \right\|^2 \right] \\
-& \leq \frac{C<em>{\mathsf{PI}} C</em>2 L^2}{h} \cdot \frac{1}{h^{1-d}} + \frac{C_{\mathsf{PI}} B^2}{h^3} \cdot \frac{1}{h^{1-d}} \cdot \int \|\nabla K(z)\|^2 P(x + hz) \, dz
-\end{align*}
+\begin{aligned}
+\E_{x'}[|f(x') K_h(x - x') - \bar{f}(x)|^2] & \leq C_{\mathsf{PI}} \E_{x'}\left[\left\|\nabla f(x') K_h(x-x')\ - \frac{1}{h^2}f(x') (\nabla K) \left( \frac{x-x'}{h}\right) \right\|^2 \right] \\
+& \leq \frac{C_{\mathsf{PI}} C_2 L^2}{h} \cdot \frac{1}{h^{1-d}} + \frac{C_{\mathsf{PI}} B^2}{h^3} \cdot \frac{1}{h^{1-d}} \cdot \int \|\nabla K(z)\|^2 P(x + hz) \, dz
+\end{aligned}
+$$
 </p>
             </div>
         </div>

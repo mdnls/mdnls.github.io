@@ -112,25 +112,57 @@ The term $(1)$ is the <em>variance explained by $x_i$</em> and the term $(2)$ is
 </li>
 </ul>
 <p>
-S<em>i = \frac{\Var(\E[Y \mid X</em>i]) }{\Var(Y)}$$
+S_i = \frac{\Var(\E[Y \mid X_i]) }{\Var(Y)}$$
 </p>
 <ul>
 <li><strong>Total Effect Sensitivity</strong>: the complement of the variance explained by all variables <em>except</em> for $X_i$.  $$
 </li>
 </ul>
 <p>
-S<em>{T</em>i} = 1 - \frac{\Var(\E[Y \mid X<em>{-i}])}{\Var(Y)} = \frac{\E[\Var(Y \mid X</em>{-i})]}{\Var{(Y)}}
+S_{T_i} = 1 - \frac{\Var(\E[Y \mid X_{-i}])}{\Var(Y)} = \frac{\E[\Var(Y \mid X_{-i})]}{\Var{(Y)}}
 $$
-**Multivariate Sensitivity Indices**: suppose the $(X_i)_{i \in [d]}$ are mutually independent and that $f$ can be written
+<strong>Multivariate Sensitivity Indices</strong>: suppose the $(X_i)_{i \in [d]}$ are mutually independent and that $f$ can be written
 $$
-\begin{align*}
-f(x<em>1, \ldots, x</em>d)& = f<em>0 + \sum</em>{i=1}^d f<em>i(x</em>i) \\
-& \quad +  \sum<em>{i=1}^d \sum</em>{j > i}^df<em>{ij}(x</em>i, x_j) \\
-& \quad + \sum<em>{i=1}^d \sum</em>{j > i}^d \sum<em>{k > i}^d f</em>{ijk}(x<em>i, x</em>j, x_k) \\
+\begin{aligned}
+f(x_1, \ldots, x_d)& = f_0 + \sum_{i=1}^d f_i(x_i) \\
+& \quad +  \sum_{i=1}^d \sum_{j > i}^df_{ij}(x_i, x_j) \\
+& \quad + \sum_{i=1}^d \sum_{j > i}^d \sum_{k > i}^d f_{ijk}(x_i, x_j, x_k) \\
 & \quad + \ \ldots \\
-& = \sum<em>{I\in 2^{[d]}}f</em>I ( (x<em>i)</em>{i \in I}).
-\end{align*}
+& = \sum_{I\in 2^{[d]}}f_I ( (x_i)_{i \in I}).
+\end{aligned}
+$$
+Also, suppose that the $(f_I)_{I \in 2^{[d]}}$ satisfy the following <em>identifiability condition</em>: for all nonempty $I \subseteq [d]$, for each $i \in I$,
+$$ \E_{x_i} [f_I((x_j)_{j \in I} ) \mid (x_j)_{j \not = i} ]  = \int f_I((x_j)_{j \in I})\ p_i(x_i) \, d{x_i} = 0 $$
 </p>
+<p>
+This representation is called a <strong>High-dimensional Model Representation</strong> (HDMR) and, under these assumptions, it satisfies:
+</p>
+<ol>
+<li>Independence: the functions $f_{I}$ are mean zero and uncorrelated.
+</li>
+<li>Hierarchical approximation:
+</li>
+</ol>
+<p>
+Remarks:
+</p>
+<ul>
+<li><strong>Multivariate decomposition of variance</strong>: by the independence property, we can write
+</li>
+</ul>
+<p>
+$$ \begin{aligned} \Var(Y) & = \Var\left( f_0 + \sum_{i=1}^d f_i(X_i) + \sum_{j > i}^d f_{ij} (X_i, X_j) + \ldots \right) \\
+& = \sum_{i=1}^d \Var(f_i) + \sum_{j > i}^d \Var(f_{ij}) + \ldots
+\end{aligned}$$which leads to a decomposition of the variance into contributions from interaction terms of every possible order. This decomposition is known as the <a href="Global Sensitivity Analysis.html">ANOVA Decomposition</a>. Normalizing by the total variance leads to a multivariate version of the tower law:
+$$ 1 = \sum_{i=1}^d \underbrace{\frac{\Var(f_i)}{\Var(Y)}}_{S_i}+ \sum_{j > i}^d \underbrace{ \frac{\Var(f_{ij})}{\Var(Y)}}_{S_{ij}} + \ldots $$
+with contributions from each of the terms $(S_I)_{I \subseteq [d]}$.
+</p>
+<ul>
+<li><strong>HDMR captures the complexity of interactions between $x_1, \ldots, x_d$</strong>. The hierarchical approximation property can be interpreted as separating out the high order correlations of $f$. If $f$ is low
+</li>
+<li>Main effect of $x_i$ is $S_i$ and total effect of $x_i$ is $\sum_{I \subseteq [d], i \in I} S_{I}$.
+</li>
+</ul>
             </div>
         </div>
         <div class="row">

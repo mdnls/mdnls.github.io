@@ -131,7 +131,18 @@ $$
 \end{aligned}
 $$
 since $V_i = 1$ precisely when $H_i \in R$ and thus when $|R_i| = |R|$. Taking the expectation on both sides,
+$$
+\E\left[ \frac{V_i}{|R|\lor 1}\right] = \sum_{k=1}^n \frac{\E[\E[V_i 1\{|R_i| = k\} \mid \Fcl_{-i}]]}{k} = \sum_{k=1}^n \frac{\E[1\{|R_i|=k\}]}{k} P_{H_L}[p_i \leq \alpha k /n] \leq \frac{\alpha}{n} $$
+where the last inequality follows from the fact that under $H_L$, $p_i$ is super uniform because we assumed $i \in L$.
+<span class="qed" />
 </p>
+<p>
+<strong>Further results</strong>:
+</p>
+<ul>
+<li>For dependent and marginally uniform p-values, Benjamini and Yekuteli (2001) show that B-H has FDR less than $\alpha S(n)$ where $S(n) \coloneqq \log n + \gamma$ and $\gamma$ is the Euler-Mascheroni constant.
+</li>
+</ul>
             </div>
         </div>
         <div class="row">

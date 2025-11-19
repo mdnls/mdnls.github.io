@@ -126,9 +126,9 @@ $$
 K(x, y) = \sum_{k \geq 0} \mu_k \phi_k(x) \phi_k(y)
 $$
 and it is the reproducing kernel of the space $(\Xcl, \langle \cdot, \cdot \rangle_{\Hcl})$ under the inner product
-$$\begin{align*}
-\langle f, g \rangle<em>{\Hcl} = \sum</em>{k \geq 0}  \frac{\langle f, \phi<em>k\rangle \langle g, \phi</em>k \rangle}{\mu_k}
-\end{align*}
+$$\begin{aligned}
+\langle f, g \rangle_{\Hcl} = \sum_{k \geq 0}  \frac{\langle f, \phi_k\rangle \langle g, \phi_k \rangle}{\mu_k}
+\end{aligned}
 $$
 </p>
 <hr />
@@ -138,9 +138,9 @@ $$
 <p>
 <em>Proof of inner product formula</em>: by the representer property, $\langle K(x, \cdot),\phi_k \rangle_{\Hcl} = \phi_k(x)$. But by linearity and by Mercer's theorem,
 $$
-\begin{align*}
-\phi<em>k(x) = \langle K(x, \cdot), \phi</em>k\rangle<em>{\Hcl} & = \sum</em>{j \geq 0} \mu<em>k \langle \phi</em>j, \phi<em>k \rangle</em>{\Hcl}\,  \phi_j(x).
-\end{align*}
+\begin{aligned}
+\phi_k(x) = \langle K(x, \cdot), \phi_k\rangle_{\Hcl} & = \sum_{j \geq 0} \mu_k \langle \phi_j, \phi_k \rangle_{\Hcl}\,  \phi_j(x).
+\end{aligned}
 $$
 Since $\{\phi_k(x)\}_{k \geq 0}$ form a linearly independent basis, this identity forces $\mu_k \langle \phi_j, \phi_k \rangle_{\Hcl} = \delta_{ij} \implies \langle \phi_j, \phi_k \rangle_{\Hcl} = \mu_k^{-1}$.
 </p>
@@ -155,18 +155,20 @@ For the sake of intuition, we can observe the reproducing property:
 </ol>
 <p>
 $$
-\langle K(x, \cdot ), f \rangle<em>{\Hcl} = \sum</em>{k \geq 0} \frac{\langle f, \phi<em>k\rangle \langle K(x, \cdot), \phi</em>k\rangle} {\mu<em>k} = \sum</em>{k \geq 0} \langle f, \phi<em>k \rangle \phi</em>k(x) = f(x).
+\langle K(x, \cdot ), f \rangle_{\Hcl} = \sum_{k \geq 0} \frac{\langle f, \phi_k\rangle \langle K(x, \cdot), \phi_k\rangle} {\mu_k} = \sum_{k \geq 0} \langle f, \phi_k \rangle \phi_k(x) = f(x).
 $$
 </p>
 <hr />
 <p>
-**(Feature map definition)**: one way to define a positive semidefinite kernel is to take $K(x, y) = \langle \Phi(x), \Phi(y) \rangle$ where $\Phi: \Xcl \to \Theta$ is an abstract feature map. If $K$ and $\Xcl$ satisfy the conditions of Mercer's theorem, then $K$ can be used to construct an RKHS.
+<strong>(Feature map definition)</strong>: one way to define a positive semidefinite kernel is to take $K(x, y) = \langle \Phi(x), \Phi(y) \rangle$ where $\Phi: \Xcl \to \Theta$ is an abstract feature map. If $K$ and $\Xcl$ satisfy the conditions of Mercer's theorem, then $K$ can be used to construct an RKHS.
 </p>
 <hr />
 <p>
 <em>Note</em>: we can also go in the 'reverse direction' and construct a feature map from the eigendecomposition of a generic Mercer kernel $K(x, y)$. Consider the map $\Phi(x) = \begin{bmatrix}\sqrt{\mu_0} \phi_0(x) & \sqrt{\mu_1}\phi_1(x) & \ldots & \end{bmatrix}$. Then it holds that
 $$
-\langle \Phi(x), \Phi(y) \rangle = \sum<em>{k \geq 0} \mu</em>k \phi<em>k(x) \phi</em>k(y) = K(x, y)
+\langle \Phi(x), \Phi(y) \rangle = \sum_{k \geq 0} \mu_k \phi_k(x) \phi_k(y) = K(x, y)
+$$
+However, one must note that $\Phi(x)$ is <em>not</em> the evaluation map for the RKHS, since it is a discrete sequence in $l^2(\N)$ and not a function in $\Lcl^2(\Xcl)$.
 </p>
             </div>
         </div>
