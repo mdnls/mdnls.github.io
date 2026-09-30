@@ -108,9 +108,7 @@ $$
 \end{aligned}
 $$
 for a range of $\beta > 0$ as $N \to \infty$. The point of this calculation is to witness a phase transition of the following type. Set $m_N(\beta) = \E[\frac{-1}{N} H_N(Z_N)]$. What we are expecting is that $m_N(\beta) \to m_\infty(\beta)$ and that $m_\infty$ looks like,
-</p>
-<p>
-<img src="POC<em>review</em>book.png" style="width:300px;" />
+<img src="assets/Screenshot 2026-09-30 at 11.08.04 AM.png" alt="Screenshot 2026-09-30 at 11.08.04 AM.png" style="width: 100%; height: auto;">
 At a critical temperature $\beta_c^{-1} > 0$, the mapping $\beta \mapsto m_\infty$ has discontinuous first derivative, its value is zero when $\beta \leq \beta_c$, and positive but finite when $\beta > \beta_c$. We discuss the interpretation of this below.
 </p>
 <p>
@@ -157,11 +155,17 @@ To summarize all of this:
 <ol>
 <li>$F_N(\beta, s)$, known as the <em>free energy</em>, is an auxiliary object that is used to calculate $m_N(\beta, s)$, via a cumulant-generating-function-like approach.
 </li>
+</ol>
+<ol>
 <li>The general strategy is to rewrite $Z(\beta, s)$ as an one dimensional integral of type $\int e^{-N \Phi(r, \beta, s) + o(N)} \, dr$. The function $\Phi(r, \beta, s)$ carries significant physical meaning, discussed below.
 </li>
+</ol>
+<ol>
 <li>By Laplace method, the limit $F_\infty(\beta, s)$ is seen to depend crucially on $r^*(\beta, s) = \text{arg-inf}_r \Phi(r, \beta, s)$. Within the scope of physical interpretations of $\Phi(r, \beta, s)$, the locations of its local minima are of particular interest.
 </li>
-<li>Once we know $r^*(\beta, s)$, we just plug in its value to compute $F_\infty(\beta, s)$ and the derivative at $s=1$. We can now compute $m_\infty(\beta)$ pointwise for each $\beta$. This is actually usually an afterthought, because phase transitions in $m_\infty(\beta)$ correspond to non-smooth points in $\beta \mapsto F_\infty(\beta, 1)$ which correspond precisely to the non-smooth points of $r^*(\beta, 1)$, so we don't need to know $m_\infty(\beta)$ to know where it has its phase transition.
+</ol>
+<ol>
+<li>Once we know $r^*(\beta, s)$, we just plug in its value to compute $F_\infty(\beta, s)$ and the derivative at $s=1$. We can now compute $m_\infty(\beta)$ pointwise for each $\beta$.
 </li>
 </ol>
 <p>
@@ -174,7 +178,7 @@ $$
 F_N(\beta, 1) & = \frac{1}{N}\E_{\rho_N}[H(Z)] - \beta^{-1} \, \frac{-1}{N} \int \rho_N(Z) \log \rho_N(Z) \, dZ
 \end{aligned}
 $$
-Physicists like this expression because it is similar to a quantity in statistical physics called the per-particle "Helmholtz free energy," identified by the letter $F$, solving a relation $F = U - TS$ for $S$ the entropy of the system, $T$ the temperature, and $U$ the internal energy of the system. In fact this is why $F_N(\beta, 1)$ is called "free energy." This expression is not at all relevant to the calculation, they just like the intuition.
+Physicists like this expression because it is similar to a quantity in statistical physics called the "Helmholtz free energy." It is a thermodynamic quantity $F$ solving the relation $F = U - TS$ for $S$ the entropy of the system, $T$ the temperature, and $U$ the internal energy of the system. This is why $F_N(\beta, 1)$ is called "free energy."
 </p>
 <p>
 Second, let's discuss the meaning of $\Phi(r, \beta, s)$ and its minimizers. Physicists like to think of $r$ as a "macroscopic observable," which provides a coarse description of a realization $Z$, and they think of the density $\exp(-N\Phi(r, \beta, s) + o(N))\, dr$ as an (unnormalized) "macroscopic Gibbs measure." In the limit $N \to \infty$, $r$ concentrates on $r^*$, so $r^*$ is describing the typical "coarse" behavior of the system. (This is why Grigorios was treating $r^*$ as a meaningful object in lecture today).
