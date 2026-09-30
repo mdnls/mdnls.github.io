@@ -145,7 +145,7 @@ Then $(X_t)_{t \geq 0}$ admits a modification with cádlág sample paths, which 
 </ol>
 <p>
 X_{t+}(\omega) \coloneqq \lim_{D \ \ni \ s \to t+} X_s(\omega)
-$$and we take $N$ to be the (null) set of $\omega \in \Omega$ where the limit does not exist. This fact can be proven with Doob's upcrossing inequality + an analytical lemma that basically says 'bounded upcrossing numbers implies existence of right limits.'
+$$and we declare the set $N$ to be the (null) set of $\omega \in \Omega$ where the limit does not exist. This fact can be proven with Doob's upcrossing inequality + an analytical lemma that basically says 'bounded upcrossing numbers implies existence of right limits.'
 </p>
 <ol>
 <li>The process $X_{t+}(\omega)$ is right-continuous by construction and it also happens to be measurable with respect to $\Fcl_{t+}$. From the supermartingale property, $X_t \geq \E[X_{t+} \mid \Fcl_t]$. By standard convergence theorems, we have $\E[X_{t+}] = \lim_{s \to t+} \E[X_s]$, so the assumption $t \mapsto \E[X_t]$ is right continuous implies that $\E[X_{t+}] = \E[X_t]$, which forces $X_t = \E[X_{t+} \mid \Fcl_t]$.
@@ -186,7 +186,7 @@ In fact, $(3) \Rightarrow (2) \Rightarrow (1)$.
 <p>
 <em>Proof</em>. to see $(3) \Rightarrow (2)$, note that for $p > 1$
 $$
-\E[|X_i| \cdot 1\{X_i \geq M\}] \leq \E\left[ |X_i| \left( \frac{|X_i|^{p-1}}{M}\right)\right] \leq \frac{\sup_{t \geq 0} \E[|X_i|^p]}{M^{p-1}} \stackrel{M \to \infty}{\longrightarrow} 0.
+\E[|X_i| \cdot 1\{X_i \geq M\}] \leq \E\left[ |X_i| \left( \frac{|X_i|}{M}\right)^{p-1}\right] \leq \frac{\sup_{t \geq 0} \E[|X_t|^p]}{M^{p-1}} \stackrel{M \to \infty}{\longrightarrow} 0.
 $$
 To see $(2) \Rightarrow (1)$, use that $\E[|X_t|] \leq M + \E[|X_i| \cdot 1 \{ |X_t| \geq M\}] < M + \eps$  for $M = M(\eps)$ sufficiently large. <p class="qed" />
 </p>
